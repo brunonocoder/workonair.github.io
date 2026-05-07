@@ -451,11 +451,178 @@
       </div>
     </div>
 
-    <!-- COMING SOON -->
-    <div class="coming-card">
-      <div class="coming-icon">🤖</div>
-      <div class="coming-title">Beauty Bot — Agentic AI</div>
-      <p class="coming-sub">AI agent that summarizes daily E-Commerce & FMCG market trends, estimates business impact, and recommends next actions. <br/>Case study coming soon.</p>
+    <!-- PROJECT 04 — BEAUTY BOT -->
+    <div class="proj-card fade-up" id="beauty-bot">
+      <div class="proj-stripe" style="background: linear-gradient(90deg, #7c3aed, #a855f7);"></div>
+      <div class="proj-body">
+        <div class="proj-meta">
+          <span class="proj-num">04.</span>
+          <span class="proj-badge" style="background:#f3e8ff;color:#6b21a8;">Current · Shopee · AI</span>
+          <span class="proj-year">2025</span>
+        </div>
+        <h2 class="proj-title">Beauty Bot —<br/><em>Agentic AI Market Intelligence</em></h2>
+        <p class="proj-org">Shopee · FMCG & Beauty Category · Powered by SMART (SEA Multi-Agent Realisation Technology)</p>
+
+        <hr class="card-divider"/>
+
+        <!-- THE PROBLEM -->
+        <div class="proj-section">
+          <div class="proj-section-label">The Problem</div>
+          <p>KAMs and team leads needed to stay ahead of daily market movements in Korea and China beauty — but reading, filtering, and summarizing industry news across multiple sources took significant time every morning. There was no structured, fast way to surface the <strong>most relevant signals</strong> and translate them into actionable steps for Shopee sellers.</p>
+        </div>
+
+        <!-- WHAT I BUILT -->
+        <div class="proj-section">
+          <div class="proj-section-label">What I Built</div>
+          <p>Designed and deployed <strong>Beauty Bot</strong> — a no-code multi-agent AI system built on Shopee's internal SMART platform. Every morning, the bot automatically scans trusted sources across e-commerce, FMCG, and Asia beauty markets, filters the 3 most recent and relevant articles, summarizes key points, estimates business impact for Shopee, and delivers structured insights with actionable next steps — all before the team starts their day.</p>
+        </div>
+
+        <!-- ARCHITECTURE -->
+        <div class="proj-section">
+          <div class="proj-section-label">System Architecture</div>
+
+          <!-- Architecture flow diagram -->
+          <div style="background:#faf9f7;border:0.5px solid var(--border);border-radius:12px;padding:20px;margin-bottom:16px;overflow-x:auto;">
+            <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;min-width:500px;">
+
+              <!-- Step 1 -->
+              <div style="background:#f3e8ff;border:0.5px solid #d8b4fe;border-radius:10px;padding:12px 14px;text-align:center;min-width:110px;">
+                <div style="font-size:18px;margin-bottom:4px;">⏰</div>
+                <div style="font-size:11px;font-weight:500;color:#6b21a8;">Daily Trigger</div>
+                <div style="font-size:10px;color:#7e22ce;margin-top:2px;">Automated schedule<br/>every morning</div>
+              </div>
+
+              <div style="font-size:18px;color:#bbb;">→</div>
+
+              <!-- Step 2 -->
+              <div style="background:#eff6ff;border:0.5px solid #bfdbfe;border-radius:10px;padding:12px 14px;text-align:center;min-width:110px;">
+                <div style="font-size:18px;margin-bottom:4px;">🔍</div>
+                <div style="font-size:11px;font-weight:500;color:#1d4ed8;">Web Search Agent</div>
+                <div style="font-size:10px;color:#1e40af;margin-top:2px;">Scans trusted sources<br/>last 3 months</div>
+              </div>
+
+              <div style="font-size:18px;color:#bbb;">→</div>
+
+              <!-- Step 3 -->
+              <div style="background:#fef3c7;border:0.5px solid #fde68a;border-radius:10px;padding:12px 14px;text-align:center;min-width:110px;">
+                <div style="font-size:18px;margin-bottom:4px;">🧠</div>
+                <div style="font-size:11px;font-weight:500;color:#92400e;">Analysis Agent</div>
+                <div style="font-size:10px;color:#78350f;margin-top:2px;">GPT-4.1-mini + Gemini<br/>summarize & score</div>
+              </div>
+
+              <div style="font-size:18px;color:#bbb;">→</div>
+
+              <!-- Step 4 -->
+              <div style="background:var(--teal-light);border:0.5px solid #6ee7b7;border-radius:10px;padding:12px 14px;text-align:center;min-width:110px;">
+                <div style="font-size:18px;margin-bottom:4px;">📚</div>
+                <div style="font-size:11px;font-weight:500;color:var(--teal-dark);">Shopee Knowledge</div>
+                <div style="font-size:10px;color:var(--teal-dark);margin-top:2px;">Shopee Uni + internal<br/>data & playbooks</div>
+              </div>
+
+              <div style="font-size:18px;color:#bbb;">→</div>
+
+              <!-- Step 5 -->
+              <div style="background:#fce7f3;border:0.5px solid #fbcfe8;border-radius:10px;padding:12px 14px;text-align:center;min-width:110px;">
+                <div style="font-size:18px;margin-bottom:4px;">📤</div>
+                <div style="font-size:11px;font-weight:500;color:#9d174d;">Output Agent</div>
+                <div style="font-size:10px;color:#831843;margin-top:2px;">Structured report<br/>delivered to team</div>
+              </div>
+
+            </div>
+
+            <!-- Platform note -->
+            <div style="margin-top:14px;padding-top:12px;border-top:0.5px solid var(--border);font-size:11.5px;color:var(--muted);">
+              <strong style="color:var(--ink);">Platform:</strong> Built on SMART (SEA Multi-Agent Realisation Technology) — Shopee's internal no-code LLM agent builder. Multi-agent architecture with tool integrations, knowledge base connectors, and scheduled triggers.
+            </div>
+          </div>
+        </div>
+
+        <!-- SOURCES & FOCUS -->
+        <div class="proj-section">
+          <div class="proj-section-label">Coverage & Sources</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+            <div style="background:var(--soft);border-radius:10px;padding:14px;">
+              <div style="font-size:11px;font-weight:500;color:var(--teal);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">Focus Markets</div>
+              <div style="display:flex;flex-wrap:wrap;gap:6px;">
+                <span class="tool-pill">🇰🇷 Korea Beauty</span>
+                <span class="tool-pill">🇨🇳 China Beauty</span>
+                <span class="tool-pill">🌏 SEA E-Commerce</span>
+                <span class="tool-pill">FMCG Trends</span>
+              </div>
+            </div>
+            <div style="background:var(--soft);border-radius:10px;padding:14px;">
+              <div style="font-size:11px;font-weight:500;color:var(--teal);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">Trusted Sources</div>
+              <div style="display:flex;flex-wrap:wrap;gap:6px;">
+                <span class="tool-pill">Tech in Asia</span>
+                <span class="tool-pill">Ecommercenews.asia</span>
+                <span class="tool-pill">Nikkei Asia</span>
+                <span class="tool-pill">Jing Daily</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SAMPLE OUTPUT -->
+        <div class="proj-section">
+          <div class="proj-section-label">Sample Daily Output Format</div>
+          <div style="background:#1a1a1a;border-radius:12px;padding:20px;color:#e5e5e5;font-size:13px;line-height:1.7;">
+            <div style="color:#a855f7;font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:12px;">📊 Daily Beauty & E-Commerce Intelligence · Asia</div>
+
+            <div style="margin-bottom:14px;">
+              <div style="color:#fff;font-weight:500;margin-bottom:3px;">1. Indonesia's Beauty Commerce Landscape</div>
+              <div style="color:#a3a3a3;font-size:12px;margin-bottom:4px;"><span style="color:#6ee7b7;">Key Point:</span> TikTok Shop continues to grow aggressively, signalling a shift towards social commerce dominance in SEA.</div>
+              <div style="color:#a3a3a3;font-size:12px;"><span style="color:#fbbf24;">Shopee Insight:</span> KAMs should monitor TikTok Shop's beauty brand collaborations to identify gaps and leverage social commerce opportunities.</div>
+            </div>
+
+            <div style="border-top:0.5px solid #333;padding-top:14px;margin-bottom:14px;">
+              <div style="color:#fff;font-weight:500;margin-bottom:3px;">2. Livestreaming Commerce Boom in China</div>
+              <div style="color:#a3a3a3;font-size:12px;margin-bottom:4px;"><span style="color:#6ee7b7;">Key Point:</span> Influencer-led livestreaming integrates more interactive and personalized shopping experiences for luxury and local brands.</div>
+              <div style="color:#a3a3a3;font-size:12px;"><span style="color:#fbbf24;">Shopee Insight:</span> Enhance livestreaming with influencer collaborations and real-time engagement features to capture Chinese consumer trends.</div>
+            </div>
+
+            <div style="border-top:0.5px solid #333;padding-top:14px;">
+              <div style="color:#888;font-size:11px;font-style:italic;">+ 4 more insights delivered daily with source links & recommended next actions</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- OUTCOME -->
+        <div class="proj-section">
+          <div class="proj-section-label">Outcome</div>
+          <div class="outcome-row">
+            <div class="stat-box" style="background:#f3e8ff;border-color:#d8b4fe;">
+              <span class="stat-val" style="color:#7c3aed;">Daily</span>
+              <div class="stat-lbl" style="color:#6b21a8;">Automated delivery</div>
+            </div>
+            <div class="stat-box" style="background:#f3e8ff;border-color:#d8b4fe;">
+              <span class="stat-val" style="color:#7c3aed;">6+</span>
+              <div class="stat-lbl" style="color:#6b21a8;">Insights per report</div>
+            </div>
+            <div class="stat-box" style="background:#f3e8ff;border-color:#d8b4fe;">
+              <span class="stat-val" style="color:#7c3aed;">Team</span>
+              <div class="stat-lbl" style="color:#6b21a8;">Piloted at lead level</div>
+            </div>
+          </div>
+          <p style="font-size:13.5px;color:var(--muted);margin-top:14px;line-height:1.7;">Successfully piloted at the team lead level. Delivers quick, Shopee-contextualized insights every morning — particularly covering China and Korea beauty market movements that directly influence SEA strategy.</p>
+        </div>
+
+        <hr class="card-divider"/>
+
+        <!-- TOOLS -->
+        <div class="proj-section">
+          <div class="proj-section-label">Tools & Stack</div>
+          <div class="tool-row">
+            <span class="tool-pill">SMART Platform</span>
+            <span class="tool-pill">GPT-4.1-mini</span>
+            <span class="tool-pill">Gemini</span>
+            <span class="tool-pill">Multi-Agent Architecture</span>
+            <span class="tool-pill">No-Code Builder</span>
+            <span class="tool-pill">Shopee Knowledge Base</span>
+            <span class="tool-pill">Web Search Integration</span>
+            <span class="tool-pill">Automated Scheduling</span>
+          </div>
+        </div>
+      </div>
     </div>
 
   </section>
@@ -476,7 +643,7 @@ const SELECTORS = [
   '.hero-tag','.hero h1','.hero-sub',
   '.proj-num','.proj-title','.proj-org',
   '.proj-badge','.stat-box','.tool-pill',
-  '.section-label','.coming-title','.coming-icon','footer'
+  '.section-label','footer'
 ];
 
 function toggleAG() { agActive ? resetAG() : launchAG(); }
