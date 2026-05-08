@@ -528,6 +528,56 @@
     .fly-el:active {
       cursor: grabbing;
     }
+
+    .dash-img-wrap {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 0.5px solid var(--border);
+      background: #fff;
+      cursor: zoom-in;
+    }
+
+    .dash-img {
+      width: 100%;
+      display: block;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .dash-img-wrap:hover .dash-img {
+      transform: scale(1.04);
+    }
+
+    .dash-zoom-hint {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.55));
+      color: #fff;
+      font-size: 11px;
+      text-align: center;
+      padding: 18px 0 8px;
+      opacity: 0;
+      transition: opacity 0.25s;
+      pointer-events: none;
+    }
+
+    .dash-img-wrap:hover .dash-zoom-hint {
+      opacity: 1;
+    }
+
+    @keyframes lbIn {
+      from {
+        opacity: 0;
+        transform: scale(0.93);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
   </style>
 </head>
 
@@ -643,12 +693,14 @@
             <div style="background:var(--soft);border-radius:10px;padding:14px;">
               <div class="proj-section-label" style="margin-bottom:6px;">Problem</div>
               <p style="font-size:13px;color:var(--muted);line-height:1.65;">No livestream presence. Reporting was
-                <strong>fully manual</strong> — copy-paste across 3 platforms daily with no unified view.</p>
+                <strong>fully manual</strong> — copy-paste across 3 platforms daily with no unified view.
+              </p>
             </div>
             <div style="background:var(--soft);border-radius:10px;padding:14px;">
               <div class="proj-section-label" style="margin-bottom:6px;">What I Built</div>
               <p style="font-size:13px;color:var(--muted);line-height:1.65;">Built livestream workflow from zero +
-                <strong>automated dashboard</strong> replacing manual reporting with a real-time snapshot.</p>
+                <strong>automated dashboard</strong> replacing manual reporting with a real-time snapshot.
+              </p>
             </div>
           </div>
 
@@ -680,9 +732,10 @@
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:6px;">
             <!-- Image 1 -->
             <div>
-              <div style="border-radius:10px;overflow:hidden;border:0.5px solid var(--border);background:#fff;">
-                <img src="assest/live_dash_1.jpg" alt="Livestream Dashboard — Power BI version"
-                  style="width:100%;display:block;" />
+              <div class="dash-img-wrap"
+                onclick="openLightbox('assest/live_dash_1.jpg','v1 — Power BI · Multi-platform GMV, traffic & host breakdown')">
+                <img src="assest/live_dash_1.jpg" alt="Livestream Dashboard — Power BI version" class="dash-img" />
+                <div class="dash-zoom-hint">🔍 Click to expand</div>
               </div>
               <p style="font-size:11px;color:var(--muted);margin-top:6px;text-align:center;line-height:1.5;">
                 <strong style="color:var(--ink);">v1 — Power BI</strong><br />
@@ -692,9 +745,10 @@
             </div>
             <!-- Image 2 -->
             <div>
-              <div style="border-radius:10px;overflow:hidden;border:0.5px solid var(--border);background:#fff;">
-                <img src="assest/live_dash_2.jpg" alt="Livestream Dashboard — Google Sheets revamp"
-                  style="width:100%;display:block;" />
+              <div class="dash-img-wrap"
+                onclick="openLightbox('assest/live_dash_2.jpg','v2 — Google Sheets Revamp · Redesigned to fit brand identity · Session & host deep-dive')">
+                <img src="assest/live_dash_2.jpg" alt="Livestream Dashboard — Google Sheets revamp" class="dash-img" />
+                <div class="dash-zoom-hint">🔍 Click to expand</div>
               </div>
               <p style="font-size:11px;color:var(--muted);margin-top:6px;text-align:center;line-height:1.5;">
                 <strong style="color:var(--ink);">v2 — Google Sheets Revamp</strong><br />
@@ -705,7 +759,39 @@
           </div>
 
           <hr class="card-divider" />
+          <div id="lightbox" onclick="closeLightbox()" style="display:none;position:fixed;inset:0;z-index:99999;
+         background:rgba(0,0,0,0.88);backdrop-filter:blur(6px);
+         align-items:center;justify-content:center;
+         cursor:zoom-out;padding:24px;box-sizing:border-box;">
+            <div style="position:relative;max-width:92vw;max-height:92vh;
+              display:flex;flex-direction:column;align-items:center;gap:12px;">
+              <img id="lightbox-img" src="" alt="" style="
+      max-width:100%;max-height:82vh;border-radius:12px;
+      box-shadow:0 24px 80px rgba(0,0,0,0.6);object-fit:contain;
+      animation:lbIn 0.22s ease both;" />
+              <div id="lightbox-caption" style="color:rgba(255,255,255,0.7);font-size:12.5px;text-align:center;"></div>
+              <div style="color:rgba(255,255,255,0.35);font-size:11px;">
+                Click anywhere · or press Esc to close
+              </div>
+            </div>
+          </div>
 
+          <script>
+            function openLightbox(src, caption) {
+              const lb = document.getElementById('lightbox');
+              document.getElementById('lightbox-img').src = src;
+              document.getElementById('lightbox-caption').textContent = caption;
+              lb.style.display = 'flex';
+              document.body.style.overflow = 'hidden';
+            }
+            function closeLightbox() {
+              document.getElementById('lightbox').style.display = 'none';
+              document.body.style.overflow = '';
+            }
+            document.addEventListener('keydown', e => {
+              if (e.key === 'Escape') closeLightbox();
+            });
+          </script>
           <div class="proj-section">
             <div class="proj-section-label">Tools</div>
             <div class="tool-row">
