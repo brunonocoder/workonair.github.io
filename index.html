@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nguyen Tien Phat — E-Commerce & AI</title>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet" />
   <style>
     :root {
       --teal: #1D9E75;
@@ -16,269 +19,607 @@
       --border: #ddd;
       --white: #fff;
     }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'DM Sans', sans-serif; background: var(--soft); color: var(--ink); line-height: 1.6; }
 
-    .hero { background: var(--ink); color: var(--white); padding: 80px 40px 60px; position: relative; overflow: hidden; }
-    .hero::before { content: ''; position: absolute; top: -80px; right: -80px; width: 360px; height: 360px; border-radius: 50%; background: var(--teal); opacity: 0.12; }
-    .hero-inner { max-width: 780px; margin: 0 auto; position: relative; }
-    .hero-tag { display: inline-block; font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; border: 1px solid rgba(255,255,255,0.25); border-radius: 20px; padding: 4px 14px; margin-bottom: 22px; color: rgba(255,255,255,0.7); }
-    .hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(38px, 7vw, 64px); line-height: 1.1; margin-bottom: 10px; }
-    .hero h1 em { font-style: italic; color: var(--teal); }
-    .hero-sub { font-size: 16px; color: rgba(255,255,255,0.6); max-width: 500px; margin-bottom: 32px; }
-    .hero-contacts { display: flex; flex-wrap: wrap; gap: 14px; }
-    .contact-pill { display: inline-flex; align-items: center; gap: 7px; font-size: 13px; color: rgba(255,255,255,0.85); text-decoration: none; border: 0.5px solid rgba(255,255,255,0.2); border-radius: 8px; padding: 7px 14px; transition: background 0.2s, border-color 0.2s; }
-    .contact-pill:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.4); }
-    .contact-pill svg { flex-shrink: 0; }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-    .page { max-width: 780px; margin: 0 auto; padding: 0 24px 80px; }
-    section { margin-top: 52px; }
-    .section-label { font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 20px; }
-    .summary-text { font-size: 16px; color: var(--muted); line-height: 1.8; border-left: 3px solid var(--teal); padding-left: 20px; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--soft);
+      color: var(--ink);
+      line-height: 1.6;
+    }
 
-    .exp-card { background: var(--white); border: 0.5px solid var(--border); border-radius: 14px; padding: 24px; margin-bottom: 14px; position: relative; transition: box-shadow 0.2s; }
-    .exp-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.07); }
-    .exp-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px; margin-bottom: 4px; }
-    .exp-company { font-family: 'DM Serif Display', serif; font-size: 20px; }
-    .exp-date { font-size: 12px; color: var(--muted); background: var(--soft); border-radius: 6px; padding: 3px 10px; }
-    .exp-role { font-size: 13px; color: var(--teal); font-weight: 500; margin-bottom: 12px; }
-    .exp-tag { display: inline-block; font-size: 11px; background: var(--teal-light); color: var(--teal-dark); border-radius: 5px; padding: 2px 8px; margin-bottom: 14px; }
-    .exp-items { list-style: none; }
-    .exp-items li { font-size: 13.5px; color: var(--muted); padding: 6px 0 6px 16px; border-bottom: 0.5px solid var(--soft); position: relative; }
-    .exp-items li::before { content: '→'; position: absolute; left: 0; color: var(--teal); font-size: 12px; }
-    .exp-items li:last-child { border-bottom: none; }
+    .hero {
+      background: var(--ink);
+      color: var(--white);
+      padding: 80px 40px 60px;
+      position: relative;
+      overflow: hidden;
+    }
 
-    .metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 16px; }
-    .metric { background: var(--teal-light); border-radius: 10px; padding: 14px 16px; text-align: center; }
-    .metric-num { font-family: 'DM Serif Display', serif; font-size: 26px; color: var(--teal-dark); display: block; }
-    .metric-label { font-size: 11px; color: var(--teal-dark); opacity: 0.8; }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -80px;
+      right: -80px;
+      width: 360px;
+      height: 360px;
+      border-radius: 50%;
+      background: var(--teal);
+      opacity: 0.12;
+    }
 
-    .skills-grid { display: flex; flex-wrap: wrap; gap: 8px; }
-    .skill-pill { font-size: 12.5px; background: var(--white); border: 0.5px solid var(--border); border-radius: 8px; padding: 6px 14px; color: var(--ink); }
+    .hero-inner {
+      max-width: 780px;
+      margin: 0 auto;
+      position: relative;
+    }
 
-    .edu-card { background: var(--white); border: 0.5px solid var(--border); border-radius: 14px; padding: 22px 24px; margin-bottom: 12px; }
-    .edu-title { font-family: 'DM Serif Display', serif; font-size: 18px; margin-bottom: 2px; }
-    .edu-sub { font-size: 13px; color: var(--muted); margin-bottom: 10px; }
-    .edu-proj { font-size: 13px; color: var(--ink); }
-    .edu-proj strong { color: var(--teal-dark); }
+    .hero-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 20px;
+      padding: 4px 14px;
+      margin-bottom: 22px;
+      color: rgba(255, 255, 255, 0.7);
+    }
 
-    footer { text-align: center; font-size: 12px; color: var(--muted); margin-top: 60px; padding-top: 24px; border-top: 0.5px solid var(--border); }
+    .hero h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(38px, 7vw, 64px);
+      line-height: 1.1;
+      margin-bottom: 10px;
+    }
 
-    .fade-up { opacity: 0; transform: translateY(24px); animation: fadeUp 0.6s ease forwards; }
-    @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
-    .fade-up:nth-child(1) { animation-delay: 0.1s; }
-    .fade-up:nth-child(2) { animation-delay: 0.2s; }
-    .fade-up:nth-child(3) { animation-delay: 0.3s; }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--teal);
+    }
 
-    @media (max-width: 600px) { .hero { padding: 60px 24px 40px; } .metrics { grid-template-columns: 1fr 1fr; } }
+    .hero-sub {
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.6);
+      max-width: 500px;
+      margin-bottom: 32px;
+    }
+
+    .hero-contacts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .contact-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.85);
+      text-decoration: none;
+      border: 0.5px solid rgba(255, 255, 255, 0.2);
+      border-radius: 8px;
+      padding: 7px 14px;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .contact-pill:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.4);
+    }
+
+    .contact-pill svg {
+      flex-shrink: 0;
+    }
+
+    .page {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+
+    section {
+      margin-top: 52px;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 20px;
+    }
+
+    .summary-text {
+      font-size: 16px;
+      color: var(--muted);
+      line-height: 1.8;
+      border-left: 3px solid var(--teal);
+      padding-left: 20px;
+    }
+
+    .exp-card {
+      background: var(--white);
+      border: 0.5px solid var(--border);
+      border-radius: 14px;
+      padding: 24px;
+      margin-bottom: 14px;
+      position: relative;
+      transition: box-shadow 0.2s;
+    }
+
+    .exp-card:hover {
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+    }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+
+    .exp-company {
+      font-family: 'DM Serif Display', serif;
+      font-size: 20px;
+    }
+
+    .exp-date {
+      font-size: 12px;
+      color: var(--muted);
+      background: var(--soft);
+      border-radius: 6px;
+      padding: 3px 10px;
+    }
+
+    .exp-role {
+      font-size: 13px;
+      color: var(--teal);
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+
+    .exp-tag {
+      display: inline-block;
+      font-size: 11px;
+      background: var(--teal-light);
+      color: var(--teal-dark);
+      border-radius: 5px;
+      padding: 2px 8px;
+      margin-bottom: 14px;
+    }
+
+    .exp-items {
+      list-style: none;
+    }
+
+    .exp-items li {
+      font-size: 13.5px;
+      color: var(--muted);
+      padding: 6px 0 6px 16px;
+      border-bottom: 0.5px solid var(--soft);
+      position: relative;
+    }
+
+    .exp-items li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--teal);
+      font-size: 12px;
+    }
+
+    .exp-items li:last-child {
+      border-bottom: none;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .metric {
+      background: var(--teal-light);
+      border-radius: 10px;
+      padding: 14px 16px;
+      text-align: center;
+    }
+
+    .metric-num {
+      font-family: 'DM Serif Display', serif;
+      font-size: 26px;
+      color: var(--teal-dark);
+      display: block;
+    }
+
+    .metric-label {
+      font-size: 11px;
+      color: var(--teal-dark);
+      opacity: 0.8;
+    }
+
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .skill-pill {
+      font-size: 12.5px;
+      background: var(--white);
+      border: 0.5px solid var(--border);
+      border-radius: 8px;
+      padding: 6px 14px;
+      color: var(--ink);
+    }
+
+    .edu-card {
+      background: var(--white);
+      border: 0.5px solid var(--border);
+      border-radius: 14px;
+      padding: 22px 24px;
+      margin-bottom: 12px;
+    }
+
+    .edu-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 18px;
+      margin-bottom: 2px;
+    }
+
+    .edu-sub {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .edu-proj {
+      font-size: 13px;
+      color: var(--ink);
+    }
+
+    .edu-proj strong {
+      color: var(--teal-dark);
+    }
+
+    footer {
+      text-align: center;
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 60px;
+      padding-top: 24px;
+      border-top: 0.5px solid var(--border);
+    }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      animation: fadeUp 0.6s ease forwards;
+    }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-up:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+
+    .fade-up:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .fade-up:nth-child(3) {
+      animation-delay: 0.3s;
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+        padding: 60px 24px 40px;
+      }
+
+      .metrics {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
 
     /* ── ANTIGRAVITY BUTTON ── */
     #agBtn {
-      position: fixed; bottom: 28px; right: 28px; z-index: 9999;
-      background: var(--ink); color: var(--white);
-      border: 1.5px solid rgba(255,255,255,0.15); border-radius: 50px;
-      padding: 11px 22px; font-family: 'DM Sans', sans-serif;
-      font-size: 13px; font-weight: 500; cursor: pointer;
-      display: flex; align-items: center; gap: 8px;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 9999;
+      background: var(--ink);
+      color: var(--white);
+      border: 1.5px solid rgba(255, 255, 255, 0.15);
+      border-radius: 50px;
+      padding: 11px 22px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
       transition: background 0.2s, transform 0.2s, border-color 0.2s;
       user-select: none;
     }
-    #agBtn:hover { background: #222; border-color: var(--teal); transform: translateY(-2px); }
-    #agBtn.on { background: var(--teal); border-color: var(--teal); }
-    #agBtn .icon { font-size: 15px; display: inline-block; transition: transform 0.5s; }
-    #agBtn.on .icon { transform: rotate(180deg); }
+
+    #agBtn:hover {
+      background: #222;
+      border-color: var(--teal);
+      transform: translateY(-2px);
+    }
+
+    #agBtn.on {
+      background: var(--teal);
+      border-color: var(--teal);
+    }
+
+    #agBtn .icon {
+      font-size: 15px;
+      display: inline-block;
+      transition: transform 0.5s;
+    }
+
+    #agBtn.on .icon {
+      transform: rotate(180deg);
+    }
 
     .ag-hint {
-      position: fixed; bottom: 78px; right: 28px; z-index: 9999;
-      font-size: 11.5px; color: var(--muted);
-      background: var(--white); border: 0.5px solid var(--border);
-      border-radius: 12px; padding: 7px 14px;
-      opacity: 0; transition: opacity 0.35s; pointer-events: none;
-      white-space: nowrap; box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      position: fixed;
+      bottom: 78px;
+      right: 28px;
+      z-index: 9999;
+      font-size: 11.5px;
+      color: var(--muted);
+      background: var(--white);
+      border: 0.5px solid var(--border);
+      border-radius: 12px;
+      padding: 7px 14px;
+      opacity: 0;
+      transition: opacity 0.35s;
+      pointer-events: none;
+      white-space: nowrap;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
     }
-    .ag-hint.show { opacity: 1; }
+
+    .ag-hint.show {
+      opacity: 1;
+    }
 
     /* flying elements */
     .fly-el {
-      position: fixed; z-index: 8888;
-      cursor: grab; user-select: none;
+      position: fixed;
+      z-index: 8888;
+      cursor: grab;
+      user-select: none;
       transition: box-shadow 0.15s;
       will-change: transform;
     }
-    .fly-el:active { cursor: grabbing; }
-    .fly-el.dragging { box-shadow: 0 8px 32px rgba(0,0,0,0.18); }
+
+    .fly-el:active {
+      cursor: grabbing;
+    }
+
+    .fly-el.dragging {
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+    }
   </style>
 </head>
+
 <body>
 
-<button id="agBtn" onclick="toggleAG()">
-  <span class="icon">🚀</span>
-  <span id="agLabel">Antigravity</span>
-</button>
-<div class="ag-hint" id="agHint">Drag elements · click Reset to restore</div>
+  <button id="agBtn" onclick="toggleAG()">
+    <span class="icon">🚀</span>
+    <span id="agLabel">Antigravity</span>
+  </button>
+  <div class="ag-hint" id="agHint">Drag elements · click Reset to restore</div>
 
-<!-- NAV -->
-<nav style="background:#111;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:56px;position:sticky;top:0;z-index:100;">
-  <a href="index.html" style="font-family:'DM Serif Display',serif;font-size:18px;color:#fff;text-decoration:none;">Nguyen <em style="color:#1D9E75;font-style:italic;">Tien Phat</em></a>
-  <div style="display:flex;gap:4px;">
-    <a href="index.html" style="font-size:13px;font-weight:500;color:#fff;text-decoration:none;padding:6px 14px;border-radius:8px;border:0.5px solid rgba(255,255,255,0.15);">About</a>
-    <a href="projects.html" style="font-size:13px;font-weight:500;color:rgba(255,255,255,0.55);text-decoration:none;padding:6px 14px;border-radius:8px;transition:color 0.2s;">Projects</a>
+  <!-- NAV -->
+  <nav
+    style="background:#111;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:56px;position:sticky;top:0;z-index:100;">
+    <a href="index.html"
+      style="font-family:'DM Serif Display',serif;font-size:18px;color:#fff;text-decoration:none;">Nguyen <em
+        style="color:#1D9E75;font-style:italic;">Tien Phat</em></a>
+    <div style="display:flex;gap:4px;">
+      <a href="index.html"
+        style="font-size:13px;font-weight:500;color:#fff;text-decoration:none;padding:6px 14px;border-radius:8px;border:0.5px solid rgba(255,255,255,0.15);">About</a>
+      <a href="projects.html"
+        style="font-size:13px;font-weight:500;color:rgba(255,255,255,0.55);text-decoration:none;padding:6px 14px;border-radius:8px;transition:color 0.2s;">Projects</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="hero-tag">Open to Opportunities</div>
+      <h1>Nguyen<br /><em>Tien Phat</em></h1>
+      <p class="hero-sub">E-Commerce Professional · Data-driven · Applied AI builder</p>
+      <div class="hero-contacts">
+        <a class="contact-pill" href="tel:+84702047078">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+            <path
+              d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 3.09 5.18 2 2 0 0 1 5.09 3h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L9.09 10.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.574 2.81.7A2 2 0 0 1 22 16.92z" />
+          </svg>
+          +84 702 047 078
+        </a>
+        <a class="contact-pill" href="mailto:nguyentienphat1201@gmail.com">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+            <rect x="2" y="4" width="20" height="16" rx="2" />
+            <polyline points="2,4 12,13 22,4" />
+          </svg>
+          nguyentienphat1201@gmail.com
+        </a>
+        <a class="contact-pill" href="https://linkedin.com/in/phatnguyen1201" target="_blank">
+          <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z" />
+            <circle cx="4" cy="4" r="2" />
+          </svg>
+          linkedin.com/in/phatnguyen1201
+        </a>
+      </div>
+    </div>
   </div>
-</nav>
 
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-inner">
-    <div class="hero-tag">Open to Opportunities</div>
-    <h1>Nguyen<br/><em>Tien Phat</em></h1>
-    <p class="hero-sub">E-Commerce Professional · Data-driven · Applied AI builder</p>
-    <div class="hero-contacts">
-      <a class="contact-pill" href="tel:+84702047078">
-        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 3.09 5.18 2 2 0 0 1 5.09 3h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L9.09 10.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.574 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        +84 702 047 078
-      </a>
-      <a class="contact-pill" href="mailto:nguyentienphat1201@gmail.com">
-        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
-        nguyentienphat1201@gmail.com
-      </a>
-      <a class="contact-pill" href="https://linkedin.com/in/phatnguyen1201" target="_blank">
-        <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
-        linkedin.com/in/phatnguyen1201
-      </a>
-    </div>
+  <div class="page">
+    <section class="fade-up">
+      <div class="section-label">About</div>
+      <p class="summary-text">
+        A confident yet continuously learning E-commerce professional with 2 years of experience from both the brand and
+        platform side. Strong in relationship management, adaptable and tech-driven — leveraging data, automation, and
+        AI to improve working efficiency.
+      </p>
+    </section>
+
+    <section>
+      <div class="section-label">Experience</div>
+      <div class="exp-card fade-up">
+        <div class="exp-header">
+          <span class="exp-company">Shopee</span>
+          <span class="exp-date">Apr 2025 – Present</span>
+        </div>
+        <div class="exp-role">Key Account Management Associate</div>
+        <span class="exp-tag">FMCG · Beauty · C2C Sellers</span>
+        <div class="metrics">
+          <div class="metric"><span class="metric-num">30%</span><span class="metric-label">MoM Growth</span></div>
+          <div class="metric"><span class="metric-num">8–10%</span><span class="metric-label">AMS Spend ↑ MoM</span>
+          </div>
+          <div class="metric"><span class="metric-num">40–50m</span><span class="metric-label">Reporting
+              Saved/day</span></div>
+        </div>
+        <ul class="exp-items">
+          <li>Drove 30% MoM growth in key commercial metrics across 40 C2C sellers via data-driven campaign strategies
+          </li>
+          <li>Increased AMS spend 8–10% MoM through Barter initiatives incentivizing higher commission rates</li>
+          <li>Built Seller Portal dashboards reducing daily reporting time by 40–50 min per KAM and boosting portfolio
+            performance by 12%</li>
+          <li>Developed Beauty Bot — an agentic AI agent summarizing daily E-Commerce & FMCG trends, piloted at team
+            lead level</li>
+        </ul>
+      </div>
+
+      <div class="exp-card fade-up">
+        <div class="exp-header">
+          <span class="exp-company">Ru9</span>
+          <span class="exp-date">May 2024 – Dec 2024</span>
+        </div>
+        <div class="exp-role">E-Commerce Executive</div>
+        <span class="exp-tag">Lazada · TikTok Shop · Home Living</span>
+        <div class="metrics" style="grid-template-columns: repeat(2,1fr)">
+          <div class="metric"><span class="metric-num">80%</span><span class="metric-label">GMV Growth YoY</span></div>
+          <div class="metric"><span class="metric-num">Top 5</span><span class="metric-label">Shopee Beddings</span>
+          </div>
+        </div>
+        <ul class="exp-items">
+          <li>Drove 15% of total E-Commerce sales contribution via livestream on Shopee, TikTok Shop, and Lazada</li>
+          <li>Grew GMV 80% YoY on Lazada & TikTok Shop through campaign optimization and KAM collaboration</li>
+          <li>Built automated trackers and Power BI dashboards transforming manual reporting into real-time snapshots
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="fade-up">
+      <div class="section-label">Skills</div>
+      <div class="skills-grid">
+        <span class="skill-pill">Data Analysis</span>
+        <span class="skill-pill">Digital Marketing</span>
+        <span class="skill-pill">Dashboard Reporting</span>
+        <span class="skill-pill">Commercial Planning</span>
+        <span class="skill-pill">Pricing Strategy</span>
+        <span class="skill-pill">Excel · SQL · Python</span>
+        <span class="skill-pill">Forecasting</span>
+        <span class="skill-pill">Applied AI</span>
+        <span class="skill-pill">Power BI</span>
+        <span class="skill-pill">Google Sheets Automation</span>
+        <span class="skill-pill">Stakeholder Management</span>
+        <span class="skill-pill">English — Business Level</span>
+      </div>
+    </section>
+
+    <section class="fade-up">
+      <div class="section-label">Education</div>
+      <div class="edu-card">
+        <div class="edu-title">UEH University</div>
+        <div class="edu-sub">Bachelor of E-Commerce · 2021–2024 · GPA 3.58</div>
+        <div class="edu-proj">
+          <strong>Young UEH Researchers 2024</strong> — Led a team of 5 to build an ARIMA forecasting model for VCB
+          stock prices, achieving 92% accuracy.<br /><br />
+          <strong>Foodate Startup 2023</strong> — Researched F&B market and developed a food waste reduction business
+          model for near-expiry goods.
+        </div>
+      </div>
+    </section>
+
+    <footer>Built with GitHub Pages · Nguyen Tien Phat © 2025</footer>
   </div>
-</div>
 
-<div class="page">
-  <section class="fade-up">
-    <div class="section-label">About</div>
-    <p class="summary-text">
-      A confident yet continuously learning E-commerce professional with 2 years of experience from both the brand and platform side. Strong in relationship management, adaptable and tech-driven — leveraging data, automation, and AI to improve working efficiency.
-    </p>
-  </section>
+  <script>
+    // ─── ANTIGRAVITY ENGINE ───────────────────────────────────────────────
+    let agActive = false;
+    let particles = [];
+    let rafId = null;
+    let dragTarget = null;
+    let dragOffX = 0, dragOffY = 0;
+    let lastMX = 0, lastMY = 0, velX = 0, velY = 0;
 
-  <section>
-    <div class="section-label">Experience</div>
-    <div class="exp-card fade-up">
-      <div class="exp-header">
-        <span class="exp-company">Shopee</span>
-        <span class="exp-date">Apr 2025 – Present</span>
-      </div>
-      <div class="exp-role">Key Account Management Associate</div>
-      <span class="exp-tag">FMCG · Beauty · C2C Sellers</span>
-      <div class="metrics">
-        <div class="metric"><span class="metric-num">30%</span><span class="metric-label">MoM Growth</span></div>
-        <div class="metric"><span class="metric-num">8–10%</span><span class="metric-label">AMS Spend ↑ MoM</span></div>
-        <div class="metric"><span class="metric-num">40–50m</span><span class="metric-label">Reporting Saved/day</span></div>
-      </div>
-      <ul class="exp-items">
-        <li>Drove 30% MoM growth in key commercial metrics across 40 C2C sellers via data-driven campaign strategies</li>
-        <li>Increased AMS spend 8–10% MoM through Barter initiatives incentivizing higher commission rates</li>
-        <li>Built Seller Portal dashboards reducing daily reporting time by 40–50 min per KAM and boosting portfolio performance by 12%</li>
-        <li>Developed Beauty Bot — an agentic AI agent summarizing daily E-Commerce & FMCG trends, piloted at team lead level</li>
-      </ul>
-    </div>
+    const SELECTORS = [
+      '.hero-tag', '.hero h1', '.hero-sub',
+      '.contact-pill', '.exp-company', '.exp-date',
+      '.exp-role', '.exp-tag', '.metric',
+      '.skill-pill', '.section-label', '.summary-text',
+      '.edu-title', '.edu-sub', 'footer'
+    ];
 
-    <div class="exp-card fade-up">
-      <div class="exp-header">
-        <span class="exp-company">Ru9</span>
-        <span class="exp-date">May 2024 – Dec 2024</span>
-      </div>
-      <div class="exp-role">E-Commerce Executive</div>
-      <span class="exp-tag">Lazada · TikTok Shop · Home Living</span>
-      <div class="metrics" style="grid-template-columns: repeat(2,1fr)">
-        <div class="metric"><span class="metric-num">80%</span><span class="metric-label">GMV Growth YoY</span></div>
-        <div class="metric"><span class="metric-num">Top 5</span><span class="metric-label">Shopee Beddings</span></div>
-      </div>
-      <ul class="exp-items">
-        <li>Drove 15% of total E-Commerce sales contribution via livestream on Shopee, TikTok Shop, and Lazada</li>
-        <li>Grew GMV 80% YoY on Lazada & TikTok Shop through campaign optimization and KAM collaboration</li>
-        <li>Built automated trackers and Power BI dashboards transforming manual reporting into real-time snapshots</li>
-      </ul>
-    </div>
-  </section>
+    function toggleAG() {
+      agActive ? resetAG() : launchAG();
+    }
 
-  <section class="fade-up">
-    <div class="section-label">Skills</div>
-    <div class="skills-grid">
-      <span class="skill-pill">Data Analysis</span>
-      <span class="skill-pill">Digital Marketing</span>
-      <span class="skill-pill">Dashboard Reporting</span>
-      <span class="skill-pill">Commercial Planning</span>
-      <span class="skill-pill">Pricing Strategy</span>
-      <span class="skill-pill">Excel · SQL · Python</span>
-      <span class="skill-pill">Forecasting</span>
-      <span class="skill-pill">Applied AI</span>
-      <span class="skill-pill">Power BI</span>
-      <span class="skill-pill">Google Sheets Automation</span>
-      <span class="skill-pill">Stakeholder Management</span>
-      <span class="skill-pill">English — Business Level</span>
-    </div>
-  </section>
+    function launchAG() {
+      agActive = true;
+      document.getElementById('agBtn').classList.add('on');
+      document.getElementById('agLabel').textContent = 'Reset ↺';
+      document.getElementById('agHint').classList.add('show');
 
-  <section class="fade-up">
-    <div class="section-label">Education</div>
-    <div class="edu-card">
-      <div class="edu-title">UEH University</div>
-      <div class="edu-sub">Bachelor of E-Commerce · 2021–2024 · GPA 3.58</div>
-      <div class="edu-proj">
-        <strong>Young UEH Researchers 2024</strong> — Led a team of 5 to build an ARIMA forecasting model for VCB stock prices, achieving 92% accuracy.<br/><br/>
-        <strong>Foodate Startup 2023</strong> — Researched F&B market and developed a food waste reduction business model for near-expiry goods.
-      </div>
-    </div>
-  </section>
+      // Collect elements
+      const collected = [];
+      SELECTORS.forEach(sel =>
+        document.querySelectorAll(sel).forEach(el => collected.push(el))
+      );
 
-  <footer>Built with GitHub Pages · Nguyen Tien Phat © 2025</footer>
-</div>
+      particles = [];
 
-<script>
-// ─── ANTIGRAVITY ENGINE ───────────────────────────────────────────────
-let agActive = false;
-let particles = [];
-let rafId = null;
-let dragTarget = null;
-let dragOffX = 0, dragOffY = 0;
-let lastMX = 0, lastMY = 0, velX = 0, velY = 0;
+      collected.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (!rect.width || !rect.height) return;
 
-const SELECTORS = [
-  '.hero-tag', '.hero h1', '.hero-sub',
-  '.contact-pill', '.exp-company', '.exp-date',
-  '.exp-role', '.exp-tag', '.metric',
-  '.skill-pill', '.section-label', '.summary-text',
-  '.edu-title', '.edu-sub', 'footer'
-];
+        // Snapshot visual as a floating div
+        const fly = document.createElement('div');
+        fly.className = 'fly-el';
 
-function toggleAG() {
-  agActive ? resetAG() : launchAG();
-}
-
-function launchAG() {
-  agActive = true;
-  document.getElementById('agBtn').classList.add('on');
-  document.getElementById('agLabel').textContent = 'Reset ↺';
-  document.getElementById('agHint').classList.add('show');
-
-  // Collect elements
-  const collected = [];
-  SELECTORS.forEach(sel =>
-    document.querySelectorAll(sel).forEach(el => collected.push(el))
-  );
-
-  particles = [];
-
-  collected.forEach(el => {
-    const rect = el.getBoundingClientRect();
-    if (!rect.width || !rect.height) return;
-
-    // Snapshot visual as a floating div
-    const fly = document.createElement('div');
-    fly.className = 'fly-el';
-
-    // Copy text content & basic appearance
-    fly.innerHTML = el.innerHTML || el.textContent;
-    const cs = getComputedStyle(el);
-    fly.style.cssText = `
+        // Copy text content & basic appearance
+        fly.innerHTML = el.innerHTML || el.textContent;
+        const cs = getComputedStyle(el);
+        fly.style.cssText = `
       left:${rect.left + window.scrollX}px;
       top:${rect.top + window.scrollY}px;
       width:${rect.width}px;
@@ -300,149 +641,150 @@ function launchAG() {
       box-sizing:border-box;
     `;
 
-    document.body.appendChild(fly);
+        document.body.appendChild(fly);
 
-    // Fling upward with random spread
-    const p = {
-      el,
-      fly,
-      x: rect.left + rect.width / 2,
-      y: rect.top + window.scrollY + rect.height / 2,
-      w: rect.width,
-      h: rect.height,
-      vx: (Math.random() - 0.5) * 6,
-      vy: -(Math.random() * 10 + 5),
-      rot: 0,
-      vrot: (Math.random() - 0.5) * 4,
-    };
-    particles.push(p);
+        // Fling upward with random spread
+        const p = {
+          el,
+          fly,
+          x: rect.left + rect.width / 2,
+          y: rect.top + window.scrollY + rect.height / 2,
+          w: rect.width,
+          h: rect.height,
+          vx: (Math.random() - 0.5) * 6,
+          vy: -(Math.random() * 10 + 5),
+          rot: 0,
+          vrot: (Math.random() - 0.5) * 4,
+        };
+        particles.push(p);
 
-    // Hide original
-    el.dataset.origVis = el.style.visibility;
-    el.style.visibility = 'hidden';
+        // Hide original
+        el.dataset.origVis = el.style.visibility;
+        el.style.visibility = 'hidden';
 
-    // Drag listeners
-    fly.addEventListener('mousedown', e => beginDrag(e, p));
-    fly.addEventListener('touchstart', e => beginDragTouch(e, p), { passive: false });
-  });
+        // Drag listeners
+        fly.addEventListener('mousedown', e => beginDrag(e, p));
+        fly.addEventListener('touchstart', e => beginDragTouch(e, p), { passive: false });
+      });
 
-  // Scroll to top so everything is visible
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+      // Scroll to top so everything is visible
+      window.scrollTo({ top: 0, behavior: 'smooth' });
 
-  window.addEventListener('mousemove', onMove);
-  window.addEventListener('mouseup', onUp);
-  window.addEventListener('touchmove', onMoveTouch, { passive: false });
-  window.addEventListener('touchend', onUp);
+      window.addEventListener('mousemove', onMove);
+      window.addEventListener('mouseup', onUp);
+      window.addEventListener('touchmove', onMoveTouch, { passive: false });
+      window.addEventListener('touchend', onUp);
 
-  loop();
-}
+      loop();
+    }
 
-function loop() {
-  if (!agActive) return;
-  const W = window.innerWidth;
-  const H = window.innerHeight;
-  const GRAV = -0.4;   // negative = floats UP
-  const DAMP = 0.988;
-  const BOUNCE = 0.5;
+    function loop() {
+      if (!agActive) return;
+      const W = window.innerWidth;
+      const H = window.innerHeight;
+      const GRAV = -0.4;   // negative = floats UP
+      const DAMP = 0.988;
+      const BOUNCE = 0.5;
 
-  particles.forEach(p => {
-    if (p === dragTarget) return;
+      particles.forEach(p => {
+        if (p === dragTarget) return;
 
-    p.vy += GRAV;
-    p.vx *= DAMP;
-    p.vy *= DAMP;
-    p.rot += p.vrot;
-    p.vrot *= 0.99;
+        p.vy += GRAV;
+        p.vx *= DAMP;
+        p.vy *= DAMP;
+        p.rot += p.vrot;
+        p.vrot *= 0.99;
 
-    p.x += p.vx;
-    p.y += p.vy;
+        p.x += p.vx;
+        p.y += p.vy;
 
-    const hw = p.w / 2, hh = p.h / 2;
+        const hw = p.w / 2, hh = p.h / 2;
 
-    if (p.x - hw < 0)     { p.x = hw;    p.vx =  Math.abs(p.vx) * BOUNCE; }
-    if (p.x + hw > W)     { p.x = W-hw;  p.vx = -Math.abs(p.vx) * BOUNCE; }
-    if (p.y - hh < 0)     { p.y = hh;    p.vy =  Math.abs(p.vy) * BOUNCE; }
-    if (p.y + hh > H)     { p.y = H-hh;  p.vy = -Math.abs(p.vy) * BOUNCE; }
+        if (p.x - hw < 0) { p.x = hw; p.vx = Math.abs(p.vx) * BOUNCE; }
+        if (p.x + hw > W) { p.x = W - hw; p.vx = -Math.abs(p.vx) * BOUNCE; }
+        if (p.y - hh < 0) { p.y = hh; p.vy = Math.abs(p.vy) * BOUNCE; }
+        if (p.y + hh > H) { p.y = H - hh; p.vy = -Math.abs(p.vy) * BOUNCE; }
 
-    p.fly.style.left      = (p.x - hw) + 'px';
-    p.fly.style.top       = (p.y - hh) + 'px';
-    p.fly.style.transform = `rotate(${p.rot}deg)`;
-    p.fly.style.position  = 'fixed';
-  });
+        p.fly.style.left = (p.x - hw) + 'px';
+        p.fly.style.top = (p.y - hh) + 'px';
+        p.fly.style.transform = `rotate(${p.rot}deg)`;
+        p.fly.style.position = 'fixed';
+      });
 
-  rafId = requestAnimationFrame(loop);
-}
+      rafId = requestAnimationFrame(loop);
+    }
 
-// ─── DRAG ───
-function beginDrag(e, p) {
-  e.preventDefault();
-  dragTarget = p;
-  dragOffX = e.clientX - p.x;
-  dragOffY = e.clientY - p.y;
-  lastMX = e.clientX; lastMY = e.clientY;
-  velX = velY = 0;
-  p.fly.classList.add('dragging');
-}
-function beginDragTouch(e, p) {
-  e.preventDefault();
-  const t = e.touches[0];
-  dragTarget = p;
-  dragOffX = t.clientX - p.x;
-  dragOffY = t.clientY - p.y;
-  lastMX = t.clientX; lastMY = t.clientY;
-  velX = velY = 0;
-  p.fly.classList.add('dragging');
-}
-function onMove(e) {
-  if (!dragTarget) return;
-  velX = e.clientX - lastMX; velY = e.clientY - lastMY;
-  lastMX = e.clientX; lastMY = e.clientY;
-  dragTarget.x = e.clientX - dragOffX;
-  dragTarget.y = e.clientY - dragOffY;
-  const hw = dragTarget.w/2, hh = dragTarget.h/2;
-  dragTarget.fly.style.left = (dragTarget.x - hw) + 'px';
-  dragTarget.fly.style.top  = (dragTarget.y - hh) + 'px';
-}
-function onMoveTouch(e) {
-  if (!dragTarget) return;
-  const t = e.touches[0];
-  velX = t.clientX - lastMX; velY = t.clientY - lastMY;
-  lastMX = t.clientX; lastMY = t.clientY;
-  dragTarget.x = t.clientX - dragOffX;
-  dragTarget.y = t.clientY - dragOffY;
-  const hw = dragTarget.w/2, hh = dragTarget.h/2;
-  dragTarget.fly.style.left = (dragTarget.x - hw) + 'px';
-  dragTarget.fly.style.top  = (dragTarget.y - hh) + 'px';
-}
-function onUp() {
-  if (!dragTarget) return;
-  dragTarget.vx = velX * 0.7;
-  dragTarget.vy = velY * 0.7;
-  dragTarget.vrot = (Math.random() - 0.5) * 6;
-  dragTarget.fly.classList.remove('dragging');
-  dragTarget = null;
-}
+    // ─── DRAG ───
+    function beginDrag(e, p) {
+      e.preventDefault();
+      dragTarget = p;
+      dragOffX = e.clientX - p.x;
+      dragOffY = e.clientY - p.y;
+      lastMX = e.clientX; lastMY = e.clientY;
+      velX = velY = 0;
+      p.fly.classList.add('dragging');
+    }
+    function beginDragTouch(e, p) {
+      e.preventDefault();
+      const t = e.touches[0];
+      dragTarget = p;
+      dragOffX = t.clientX - p.x;
+      dragOffY = t.clientY - p.y;
+      lastMX = t.clientX; lastMY = t.clientY;
+      velX = velY = 0;
+      p.fly.classList.add('dragging');
+    }
+    function onMove(e) {
+      if (!dragTarget) return;
+      velX = e.clientX - lastMX; velY = e.clientY - lastMY;
+      lastMX = e.clientX; lastMY = e.clientY;
+      dragTarget.x = e.clientX - dragOffX;
+      dragTarget.y = e.clientY - dragOffY;
+      const hw = dragTarget.w / 2, hh = dragTarget.h / 2;
+      dragTarget.fly.style.left = (dragTarget.x - hw) + 'px';
+      dragTarget.fly.style.top = (dragTarget.y - hh) + 'px';
+    }
+    function onMoveTouch(e) {
+      if (!dragTarget) return;
+      const t = e.touches[0];
+      velX = t.clientX - lastMX; velY = t.clientY - lastMY;
+      lastMX = t.clientX; lastMY = t.clientY;
+      dragTarget.x = t.clientX - dragOffX;
+      dragTarget.y = t.clientY - dragOffY;
+      const hw = dragTarget.w / 2, hh = dragTarget.h / 2;
+      dragTarget.fly.style.left = (dragTarget.x - hw) + 'px';
+      dragTarget.fly.style.top = (dragTarget.y - hh) + 'px';
+    }
+    function onUp() {
+      if (!dragTarget) return;
+      dragTarget.vx = velX * 0.7;
+      dragTarget.vy = velY * 0.7;
+      dragTarget.vrot = (Math.random() - 0.5) * 6;
+      dragTarget.fly.classList.remove('dragging');
+      dragTarget = null;
+    }
 
-function resetAG() {
-  agActive = false;
-  cancelAnimationFrame(rafId);
+    function resetAG() {
+      agActive = false;
+      cancelAnimationFrame(rafId);
 
-  particles.forEach(p => {
-    p.fly.remove();
-    p.el.style.visibility = p.el.dataset.origVis || '';
-  });
-  particles = [];
-  dragTarget = null;
+      particles.forEach(p => {
+        p.fly.remove();
+        p.el.style.visibility = p.el.dataset.origVis || '';
+      });
+      particles = [];
+      dragTarget = null;
 
-  window.removeEventListener('mousemove', onMove);
-  window.removeEventListener('mouseup', onUp);
-  window.removeEventListener('touchmove', onMoveTouch);
-  window.removeEventListener('touchend', onUp);
+      window.removeEventListener('mousemove', onMove);
+      window.removeEventListener('mouseup', onUp);
+      window.removeEventListener('touchmove', onMoveTouch);
+      window.removeEventListener('touchend', onUp);
 
-  document.getElementById('agBtn').classList.remove('on');
-  document.getElementById('agLabel').textContent = 'Antigravity';
-  document.getElementById('agHint').classList.remove('show');
-}
-</script>
+      document.getElementById('agBtn').classList.remove('on');
+      document.getElementById('agLabel').textContent = 'Antigravity';
+      document.getElementById('agHint').classList.remove('show');
+    }
+  </script>
 </body>
+
 </html>
