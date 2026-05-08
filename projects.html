@@ -1175,10 +1175,10 @@
   </script>
 
   <!-- LIGHTBOX -->
-  <div id="lightbox" onclick="closeLightbox()" style="display:none;position:fixed;inset:0;z-index:99999;
+  <div id="lightbox" style="display:none;position:fixed;inset:0;z-index:99999;
        background:rgba(0,0,0,0.88);backdrop-filter:blur(6px);
        align-items:center;justify-content:center;
-       cursor:zoom-out;padding:24px;box-sizing:border-box;">
+       cursor:zoom-out;padding:24px;box-sizing:border-box;overflow:hidden;">
     <div style="position:relative;max-width:92vw;max-height:92vh;
           display:flex;flex-direction:column;align-items:center;gap:12px;">
       <img id="lightbox-img" src="" alt="" style="
@@ -1187,7 +1187,7 @@
         animation:lbIn 0.22s ease both;" />
       <div id="lightbox-caption" style="color:rgba(255,255,255,0.7);font-size:12.5px;text-align:center;"></div>
       <div style="color:rgba(255,255,255,0.35);font-size:11px;">
-        Click anywhere · or press Esc to close
+        Click to close
       </div>
     </div>
   </div>
@@ -1195,10 +1195,14 @@
   <script>
     function openLightbox(src, caption) {
       const lb = document.getElementById('lightbox');
-      document.getElementById('lightbox-img').src = src;
+      const img = document.getElementById('lightbox-img');
+      img.src = src;
       document.getElementById('lightbox-caption').textContent = caption;
       lb.style.display = 'flex';
       document.body.style.overflow = 'hidden';
+      // Reset pan/zoom on open
+      lbScale = 1; lbX = 0; lbY = 0;
+      applyLbTransform();
     }
     function closeLightbox() {
       document.getElementById('lightbox').style.display = 'none';
@@ -1207,6 +1211,45 @@
     document.addEventListener('keydown', e => {
       if (e.key === 'Escape') closeLightbox();
     });
+    // Close only when clicking the backdrop (not the image)
+    document.getElementById('lb-backdrop').addEventListener('click', closeLightbox);
+
+    // ── Drag & Zoom state ──
+    let lbScale = 1, lbX = 0, lbY = 0;
+    let lbDragging = false, lbStartX = 0, lbStartY = 0, lbOriginX = 0, lbOriginY = 0;
+
+    function applyLbTransform() {
+      const img = document.getElementById('lightbox-img');
+      img.style.transform = `translate(${lbX}px, ${lbY}px) scale(${lbScale})`;
+      img.style.cursor = lbDragging ? 'grabbing' : (lbScale > 1 ? 'grab' : 'grab');
+    }
+
+    // Drag
+    document.getElementById('lightbox-img').addEventListener('mousedown', e => {
+      e.preventDefault();
+      lbDragging = true;
+      lbStartX = e.clientX - lbX;
+      lbStartY = e.clientY - lbY;
+      applyLbTransform();
+    });
+    window.addEventListener('mousemove', e => {
+      if (!lbDragging) return;
+      lbX = e.clientX - lbStartX;
+      lbY = e.clientY - lbStartY;
+      applyLbTransform();
+    });
+    window.addEventListener('mouseup', () => {
+      if (lbDragging) { lbDragging = false; applyLbTransform(); }
+    });
+
+    // Scroll to zoom (middle mouse)
+    document.getElementById('lightbox').addEventListener('wheel', e => {
+      if (document.getElementById('lightbox').style.display === 'none') return;
+      e.preventDefault();
+      const delta = e.deltaY > 0 ? -0.12 : 0.12;
+      lbScale = Math.min(Math.max(lbScale + delta, 0.5), 5);
+      applyLbTransform();
+    }, { passive: false });
   </script>
 
 </body>
