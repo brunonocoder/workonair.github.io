@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projects — Nguyen Tien Phat</title>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet" />
   <style>
     :root {
       --teal: #1D9E75;
@@ -16,8 +19,21 @@
       --border: #ddd;
       --white: #fff;
     }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'DM Sans', sans-serif; background: var(--soft); color: var(--ink); line-height: 1.6; }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--soft);
+      color: var(--ink);
+      line-height: 1.6;
+    }
 
     /* ── NAV ── */
     .nav {
@@ -27,68 +43,139 @@
       align-items: center;
       justify-content: space-between;
       height: 56px;
-      position: sticky; top: 0; z-index: 100;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
+
     .nav-logo {
       font-family: 'DM Serif Display', serif;
-      font-size: 18px; color: var(--white);
-      text-decoration: none; letter-spacing: -0.01em;
-    }
-    .nav-logo em { color: var(--teal); font-style: italic; }
-    .nav-links { display: flex; gap: 4px; }
-    .nav-link {
-      font-size: 13px; font-weight: 500;
-      color: rgba(255,255,255,0.55);
+      font-size: 18px;
+      color: var(--white);
       text-decoration: none;
-      padding: 6px 14px; border-radius: 8px;
+      letter-spacing: -0.01em;
+    }
+
+    .nav-logo em {
+      color: var(--teal);
+      font-style: italic;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 4px;
+    }
+
+    .nav-link {
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.55);
+      text-decoration: none;
+      padding: 6px 14px;
+      border-radius: 8px;
       border: 0.5px solid transparent;
       transition: color 0.2s, background 0.2s;
     }
-    .nav-link:hover { color: var(--white); background: rgba(255,255,255,0.07); }
-    .nav-link.active { color: var(--white); border-color: rgba(255,255,255,0.15); }
+
+    .nav-link:hover {
+      color: var(--white);
+      background: rgba(255, 255, 255, 0.07);
+    }
+
+    .nav-link.active {
+      color: var(--white);
+      border-color: rgba(255, 255, 255, 0.15);
+    }
 
     /* ── HERO ── */
     .hero {
-      background: var(--ink); color: var(--white);
+      background: var(--ink);
+      color: var(--white);
       padding: 64px 40px 52px;
-      position: relative; overflow: hidden;
+      position: relative;
+      overflow: hidden;
     }
+
     .hero::before {
       content: '';
-      position: absolute; top: -60px; right: -60px;
-      width: 320px; height: 320px; border-radius: 50%;
-      background: var(--teal); opacity: 0.12;
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      background: var(--teal);
+      opacity: 0.12;
     }
+
     .hero::after {
       content: 'PROJECTS';
-      position: absolute; bottom: -20px; left: -10px;
+      position: absolute;
+      bottom: -20px;
+      left: -10px;
       font-family: 'DM Serif Display', serif;
-      font-size: 120px; color: rgba(255,255,255,0.03);
-      white-space: nowrap; pointer-events: none; letter-spacing: -0.04em;
+      font-size: 120px;
+      color: rgba(255, 255, 255, 0.03);
+      white-space: nowrap;
+      pointer-events: none;
+      letter-spacing: -0.04em;
     }
-    .hero-inner { max-width: 780px; margin: 0 auto; position: relative; }
+
+    .hero-inner {
+      max-width: 780px;
+      margin: 0 auto;
+      position: relative;
+    }
+
     .hero-tag {
       display: inline-block;
-      font-size: 11px; font-weight: 500; letter-spacing: 0.12em;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      border: 1px solid rgba(255,255,255,0.2);
-      border-radius: 20px; padding: 4px 14px;
-      margin-bottom: 18px; color: rgba(255,255,255,0.6);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      padding: 4px 14px;
+      margin-bottom: 18px;
+      color: rgba(255, 255, 255, 0.6);
     }
+
     .hero h1 {
       font-family: 'DM Serif Display', serif;
       font-size: clamp(36px, 6vw, 58px);
-      line-height: 1.1; margin-bottom: 12px;
+      line-height: 1.1;
+      margin-bottom: 12px;
     }
-    .hero h1 em { font-style: italic; color: var(--teal); }
-    .hero-sub { font-size: 15px; color: rgba(255,255,255,0.55); max-width: 460px; }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--teal);
+    }
+
+    .hero-sub {
+      font-size: 15px;
+      color: rgba(255, 255, 255, 0.55);
+      max-width: 460px;
+    }
 
     /* ── LAYOUT ── */
-    .page { max-width: 780px; margin: 0 auto; padding: 0 24px 100px; }
-    section { margin-top: 52px; }
+    .page {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 24px 100px;
+    }
+
+    section {
+      margin-top: 52px;
+    }
+
     .section-label {
-      font-size: 11px; font-weight: 500; letter-spacing: 0.12em;
-      text-transform: uppercase; color: var(--teal); margin-bottom: 20px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 20px;
     }
 
     /* ── PROJECT CARD ── */
@@ -100,607 +187,861 @@
       overflow: hidden;
       transition: box-shadow 0.25s, transform 0.2s;
     }
-    .proj-card:hover { box-shadow: 0 6px 28px rgba(0,0,0,0.09); transform: translateY(-2px); }
+
+    .proj-card:hover {
+      box-shadow: 0 6px 28px rgba(0, 0, 0, 0.09);
+      transform: translateY(-2px);
+    }
 
     /* Card top stripe */
     .proj-stripe {
       height: 4px;
       background: var(--teal);
     }
-    .proj-stripe.amber { background: linear-gradient(90deg, #f59e0b, #fbbf24); }
-    .proj-stripe.coral { background: linear-gradient(90deg, #ef4444, #f97316); }
-    .proj-stripe.teal  { background: linear-gradient(90deg, #1D9E75, #34d399); }
 
-    .proj-body { padding: 28px; }
+    .proj-stripe.amber {
+      background: linear-gradient(90deg, #f59e0b, #fbbf24);
+    }
+
+    .proj-stripe.coral {
+      background: linear-gradient(90deg, #ef4444, #f97316);
+    }
+
+    .proj-stripe.teal {
+      background: linear-gradient(90deg, #1D9E75, #34d399);
+    }
+
+    .proj-body {
+      padding: 28px;
+    }
 
     .proj-meta {
-      display: flex; align-items: center;
-      gap: 10px; flex-wrap: wrap; margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
     }
+
     .proj-num {
       font-family: 'DM Serif Display', serif;
-      font-size: 13px; color: var(--teal); opacity: 0.6;
+      font-size: 13px;
+      color: var(--teal);
+      opacity: 0.6;
       font-style: italic;
     }
+
     .proj-badge {
-      font-size: 11px; font-weight: 500;
-      padding: 3px 10px; border-radius: 20px;
+      font-size: 11px;
+      font-weight: 500;
+      padding: 3px 10px;
+      border-radius: 20px;
       letter-spacing: 0.04em;
     }
-    .badge-blue  { background: #dbeafe; color: #1e40af; }
-    .badge-amber { background: #fef3c7; color: #92400e; }
-    .badge-green { background: var(--teal-light); color: var(--teal-dark); }
-    .proj-year { font-size: 12px; color: var(--muted); margin-left: auto; }
+
+    .badge-blue {
+      background: #dbeafe;
+      color: #1e40af;
+    }
+
+    .badge-amber {
+      background: #fef3c7;
+      color: #92400e;
+    }
+
+    .badge-green {
+      background: var(--teal-light);
+      color: var(--teal-dark);
+    }
+
+    .proj-year {
+      font-size: 12px;
+      color: var(--muted);
+      margin-left: auto;
+    }
 
     .proj-title {
       font-family: 'DM Serif Display', serif;
       font-size: clamp(22px, 4vw, 30px);
-      line-height: 1.15; margin-bottom: 4px;
+      line-height: 1.15;
+      margin-bottom: 4px;
     }
-    .proj-title em { font-style: italic; color: var(--teal); }
-    .proj-org { font-size: 13px; color: var(--muted); margin-bottom: 22px; }
+
+    .proj-title em {
+      font-style: italic;
+      color: var(--teal);
+    }
+
+    .proj-org {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 22px;
+    }
 
     /* Sections inside card */
-    .proj-section { margin-bottom: 20px; }
-    .proj-section:last-child { margin-bottom: 0; }
+    .proj-section {
+      margin-bottom: 20px;
+    }
+
+    .proj-section:last-child {
+      margin-bottom: 0;
+    }
+
     .proj-section-label {
-      font-size: 10px; font-weight: 500; letter-spacing: 0.12em;
-      text-transform: uppercase; color: var(--teal);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--teal);
       margin-bottom: 8px;
     }
+
     .proj-section p {
-      font-size: 14px; color: var(--muted); line-height: 1.75;
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.75;
     }
-    .proj-section p strong { color: var(--ink); font-weight: 500; }
+
+    .proj-section p strong {
+      color: var(--ink);
+      font-weight: 500;
+    }
 
     /* Outcome stats */
-    .outcome-row { display: flex; gap: 10px; flex-wrap: wrap; }
+    .outcome-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
     .stat-box {
       background: var(--teal-light);
-      border-radius: 10px; padding: 12px 20px; text-align: center; flex: 1; min-width: 90px;
+      border-radius: 10px;
+      padding: 12px 20px;
+      text-align: center;
+      flex: 1;
+      min-width: 90px;
     }
+
     .stat-val {
       font-family: 'DM Serif Display', serif;
-      font-size: 26px; color: var(--teal-dark);
-      display: block; line-height: 1;
+      font-size: 26px;
+      color: var(--teal-dark);
+      display: block;
+      line-height: 1;
     }
-    .stat-lbl { font-size: 10px; color: var(--teal-dark); opacity: 0.75; margin-top: 3px; }
+
+    .stat-lbl {
+      font-size: 10px;
+      color: var(--teal-dark);
+      opacity: 0.75;
+      margin-top: 3px;
+    }
 
     /* Tool pills */
-    .tool-row { display: flex; flex-wrap: wrap; gap: 7px; }
+    .tool-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
     .tool-pill {
-      font-size: 12px; background: var(--soft);
+      font-size: 12px;
+      background: var(--soft);
       border: 0.5px solid var(--border);
-      border-radius: 7px; padding: 4px 12px;
+      border-radius: 7px;
+      padding: 4px 12px;
       color: var(--ink);
     }
 
     /* Divider inside card */
-    .card-divider { border: none; border-top: 0.5px solid #f0f0f0; margin: 20px 0; }
+    .card-divider {
+      border: none;
+      border-top: 0.5px solid #f0f0f0;
+      margin: 20px 0;
+    }
 
     /* ── COMING SOON ── */
     .coming-card {
       background: var(--white);
       border: 1px dashed var(--border);
-      border-radius: 16px; padding: 32px;
-      text-align: center; color: var(--muted);
+      border-radius: 16px;
+      padding: 32px;
+      text-align: center;
+      color: var(--muted);
       margin-bottom: 20px;
     }
-    .coming-icon { font-size: 28px; margin-bottom: 10px; }
-    .coming-title { font-family: 'DM Serif Display', serif; font-size: 18px; color: var(--ink); margin-bottom: 6px; }
-    .coming-sub { font-size: 13px; }
+
+    .coming-icon {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .coming-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 18px;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+
+    .coming-sub {
+      font-size: 13px;
+    }
 
     /* ── FOOTER ── */
     footer {
-      text-align: center; font-size: 12px; color: var(--muted);
-      margin-top: 60px; padding-top: 24px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 60px;
+      padding-top: 24px;
       border-top: 0.5px solid var(--border);
     }
-    footer a { color: var(--teal); text-decoration: none; }
-    footer a:hover { text-decoration: underline; }
+
+    footer a {
+      color: var(--teal);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
 
     /* ── ANIMATIONS ── */
-    .fade-up { opacity: 0; transform: translateY(20px); animation: fadeUp 0.55s ease forwards; }
-    @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
-    .proj-card:nth-child(1) { animation-delay: 0.05s; }
-    .proj-card:nth-child(2) { animation-delay: 0.15s; }
-    .proj-card:nth-child(3) { animation-delay: 0.25s; }
+    .fade-up {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.55s ease forwards;
+    }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .proj-card:nth-child(1) {
+      animation-delay: 0.05s;
+    }
+
+    .proj-card:nth-child(2) {
+      animation-delay: 0.15s;
+    }
+
+    .proj-card:nth-child(3) {
+      animation-delay: 0.25s;
+    }
 
     @media (max-width: 600px) {
-      .nav { padding: 0 20px; }
-      .hero { padding: 48px 24px 40px; }
-      .proj-body { padding: 20px; }
-      .outcome-row { flex-direction: column; }
+      .nav {
+        padding: 0 20px;
+      }
+
+      .hero {
+        padding: 48px 24px 40px;
+      }
+
+      .proj-body {
+        padding: 20px;
+      }
+
+      .outcome-row {
+        flex-direction: column;
+      }
     }
 
     /* ── ANTIGRAVITY ── */
     #agBtn {
-      position: fixed; bottom: 28px; right: 28px; z-index: 9999;
-      background: var(--ink); color: var(--white);
-      border: 1.5px solid rgba(255,255,255,0.15); border-radius: 50px;
-      padding: 11px 22px; font-family: 'DM Sans', sans-serif;
-      font-size: 13px; font-weight: 500; cursor: pointer;
-      display: flex; align-items: center; gap: 8px;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 9999;
+      background: var(--ink);
+      color: var(--white);
+      border: 1.5px solid rgba(255, 255, 255, 0.15);
+      border-radius: 50px;
+      padding: 11px 22px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
       transition: background 0.2s, transform 0.2s, border-color 0.2s;
       user-select: none;
     }
-    #agBtn:hover { background: #222; border-color: var(--teal); transform: translateY(-2px); }
-    #agBtn.on { background: var(--teal); border-color: var(--teal); }
-    #agBtn .icon { font-size: 15px; display: inline-block; transition: transform 0.5s; }
-    #agBtn.on .icon { transform: rotate(180deg); }
+
+    #agBtn:hover {
+      background: #222;
+      border-color: var(--teal);
+      transform: translateY(-2px);
+    }
+
+    #agBtn.on {
+      background: var(--teal);
+      border-color: var(--teal);
+    }
+
+    #agBtn .icon {
+      font-size: 15px;
+      display: inline-block;
+      transition: transform 0.5s;
+    }
+
+    #agBtn.on .icon {
+      transform: rotate(180deg);
+    }
+
     .ag-hint {
-      position: fixed; bottom: 78px; right: 28px; z-index: 9999;
-      font-size: 11.5px; color: var(--muted);
-      background: var(--white); border: 0.5px solid var(--border);
-      border-radius: 12px; padding: 7px 14px;
-      opacity: 0; transition: opacity 0.35s; pointer-events: none;
-      white-space: nowrap; box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      position: fixed;
+      bottom: 78px;
+      right: 28px;
+      z-index: 9999;
+      font-size: 11.5px;
+      color: var(--muted);
+      background: var(--white);
+      border: 0.5px solid var(--border);
+      border-radius: 12px;
+      padding: 7px 14px;
+      opacity: 0;
+      transition: opacity 0.35s;
+      pointer-events: none;
+      white-space: nowrap;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
     }
-    .ag-hint.show { opacity: 1; }
+
+    .ag-hint.show {
+      opacity: 1;
+    }
+
     .fly-el {
-      position: fixed; z-index: 8888; cursor: grab;
-      user-select: none; will-change: transform;
+      position: fixed;
+      z-index: 8888;
+      cursor: grab;
+      user-select: none;
+      will-change: transform;
     }
-    .fly-el:active { cursor: grabbing; }
+
+    .fly-el:active {
+      cursor: grabbing;
+    }
   </style>
 </head>
+
 <body>
 
-<!-- NAV -->
-<nav class="nav">
-  <a class="nav-logo" href="index.html">Nguyen <em>Tien Phat</em></a>
-  <div class="nav-links">
-    <a class="nav-link" href="index.html">About</a>
-    <a class="nav-link active" href="projects.html">Projects</a>
+  <!-- NAV -->
+  <nav class="nav">
+    <a class="nav-logo" href="index.html">Nguyen <em>Tien Phat</em></a>
+    <div class="nav-links">
+      <a class="nav-link" href="index.html">About</a>
+      <a class="nav-link active" href="projects.html">Projects</a>
+    </div>
+  </nav>
+
+  <!-- ANTIGRAVITY -->
+  <button id="agBtn" onclick="toggleAG()">
+    <span class="icon">🚀</span>
+    <span id="agLabel">Antigravity</span>
+  </button>
+  <div class="ag-hint" id="agHint">Drag elements · click Reset to restore</div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="hero-tag">Selected Work</div>
+      <h1>My <em>Projects</em></h1>
+      <p class="hero-sub">Real problems. Real tools. Measurable outcomes across E-Commerce, Data & AI.</p>
+    </div>
   </div>
-</nav>
 
-<!-- ANTIGRAVITY -->
-<button id="agBtn" onclick="toggleAG()">
-  <span class="icon">🚀</span>
-  <span id="agLabel">Antigravity</span>
-</button>
-<div class="ag-hint" id="agHint">Drag elements · click Reset to restore</div>
+  <div class="page">
+    <section>
+      <div class="section-label">Project List</div>
 
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-inner">
-    <div class="hero-tag">Selected Work</div>
-    <h1>My <em>Projects</em></h1>
-    <p class="hero-sub">Real problems. Real tools. Measurable outcomes across E-Commerce, Data & AI.</p>
-  </div>
-</div>
+      <!-- PROJECT 01 -->
+      <div class="proj-card fade-up">
+        <div class="proj-stripe amber"></div>
+        <div class="proj-body">
+          <div class="proj-meta">
+            <span class="proj-num">01.</span>
+            <span class="proj-badge badge-blue">Undergraduate Research</span>
+            <span class="proj-year">2024</span>
+          </div>
+          <h2 class="proj-title">ARIMA Forecasting Model —<br /><em>VCB Stock Price Prediction</em></h2>
+          <p class="proj-org">UEH University · Young UEH Researchers 2024 · Team of 5</p>
 
-<div class="page">
-  <section>
-    <div class="section-label">Project List</div>
+          <hr class="card-divider" />
 
-    <!-- PROJECT 01 -->
-    <div class="proj-card fade-up">
-      <div class="proj-stripe amber"></div>
-      <div class="proj-body">
-        <div class="proj-meta">
-          <span class="proj-num">01.</span>
-          <span class="proj-badge badge-blue">Undergraduate Research</span>
-          <span class="proj-year">2024</span>
-        </div>
-        <h2 class="proj-title">ARIMA Forecasting Model —<br/><em>VCB Stock Price Prediction</em></h2>
-        <p class="proj-org">UEH University · Young UEH Researchers 2024 · Team of 5</p>
+          <div class="proj-section">
+            <div class="proj-section-label">The Problem</div>
+            <p>Stock price prediction is notoriously difficult. The challenge: build a model using <strong>only
+                historical price data</strong> — no external indicators — and achieve meaningful accuracy on Vietcombank
+              (VCB) stock.</p>
+          </div>
 
-        <hr class="card-divider"/>
+          <div class="proj-section">
+            <div class="proj-section-label">What I Built</div>
+            <p>Led a team of 5 to design, train, and validate an <strong>ARIMA time-series forecasting model</strong> on
+              VCB historical data. Handled data collection, stationarity testing (ADF), model parameter selection
+              (p,d,q), and evaluation in Python. Presented findings as part of Young UEH Researchers 2024.</p>
+          </div>
 
-        <div class="proj-section">
-          <div class="proj-section-label">The Problem</div>
-          <p>Stock price prediction is notoriously difficult. The challenge: build a model using <strong>only historical price data</strong> — no external indicators — and achieve meaningful accuracy on Vietcombank (VCB) stock.</p>
-        </div>
-
-        <div class="proj-section">
-          <div class="proj-section-label">What I Built</div>
-          <p>Led a team of 5 to design, train, and validate an <strong>ARIMA time-series forecasting model</strong> on VCB historical data. Handled data collection, stationarity testing (ADF), model parameter selection (p,d,q), and evaluation in Python. Presented findings as part of Young UEH Researchers 2024.</p>
-        </div>
-
-        <div class="proj-section">
-          <div class="proj-section-label">Outcome</div>
-          <div class="outcome-row">
-            <div class="stat-box">
-              <span class="stat-val">92%</span>
-              <div class="stat-lbl">Forecast Accuracy</div>
-            </div>
-            <div class="stat-box">
-              <span class="stat-val">5</span>
-              <div class="stat-lbl">Team Members Led</div>
-            </div>
-            <div class="stat-box">
-              <span class="stat-val">100%</span>
-              <div class="stat-lbl">Historical Data Only</div>
+          <div class="proj-section">
+            <div class="proj-section-label">Outcome</div>
+            <div class="outcome-row">
+              <div class="stat-box">
+                <span class="stat-val">92%</span>
+                <div class="stat-lbl">Forecast Accuracy</div>
+              </div>
+              <div class="stat-box">
+                <span class="stat-val">5</span>
+                <div class="stat-lbl">Team Members Led</div>
+              </div>
+              <div class="stat-box">
+                <span class="stat-val">100%</span>
+                <div class="stat-lbl">Historical Data Only</div>
+              </div>
             </div>
           </div>
-        </div>
 
-        <hr class="card-divider"/>
+          <hr class="card-divider" />
 
-        <div class="proj-section">
-          <div class="proj-section-label">Tools & Methods</div>
-          <div class="tool-row">
-            <span class="tool-pill">Python</span>
-            <span class="tool-pill">ARIMA / statsmodels</span>
-            <span class="tool-pill">Pandas</span>
-            <span class="tool-pill">Matplotlib</span>
-            <span class="tool-pill">ADF Test</span>
-            <span class="tool-pill">Time-Series Analysis</span>
+          <div class="proj-section">
+            <div class="proj-section-label">Tools & Methods</div>
+            <div class="tool-row">
+              <span class="tool-pill">Python</span>
+              <span class="tool-pill">ARIMA / statsmodels</span>
+              <span class="tool-pill">Pandas</span>
+              <span class="tool-pill">Matplotlib</span>
+              <span class="tool-pill">ADF Test</span>
+              <span class="tool-pill">Time-Series Analysis</span>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- PROJECT 02 -->
-    <div class="proj-card fade-up">
-      <div class="proj-stripe coral"></div>
-      <div class="proj-body">
-        <div class="proj-meta">
-          <span class="proj-num">02.</span>
-          <span class="proj-badge badge-amber">E-Commerce Operations</span>
-          <span class="proj-year">2024</span>
-        </div>
-        <h2 class="proj-title">Brand Livestream Engine &<br/><em>Automated Performance Dashboard</em></h2>
-        <p class="proj-org">Ru9 · Shopee · TikTok Shop · Lazada · Home Living Category</p>
-
-        <hr class="card-divider"/>
-
-        <!-- Two-col: problem + what built -->
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px;">
-          <div style="background:var(--soft);border-radius:10px;padding:14px;">
-            <div class="proj-section-label" style="margin-bottom:6px;">Problem</div>
-            <p style="font-size:13px;color:var(--muted);line-height:1.65;">No livestream presence. Reporting was <strong>fully manual</strong> — copy-paste across 3 platforms daily with no unified view.</p>
+      <!-- PROJECT 02 -->
+      <div class="proj-card fade-up">
+        <div class="proj-stripe coral"></div>
+        <div class="proj-body">
+          <div class="proj-meta">
+            <span class="proj-num">02.</span>
+            <span class="proj-badge badge-amber">E-Commerce Operations</span>
+            <span class="proj-year">2024</span>
           </div>
-          <div style="background:var(--soft);border-radius:10px;padding:14px;">
-            <div class="proj-section-label" style="margin-bottom:6px;">What I Built</div>
-            <p style="font-size:13px;color:var(--muted);line-height:1.65;">Built livestream workflow from zero + <strong>automated dashboard</strong> replacing manual reporting with a real-time snapshot.</p>
-          </div>
-        </div>
+          <h2 class="proj-title">Brand Livestream Engine &<br /><em>Automated Performance Dashboard</em></h2>
+          <p class="proj-org">Ru9 · Shopee · TikTok Shop · Lazada · Home Living Category</p>
 
-        <!-- Outcome stats -->
-        <div class="outcome-row" style="margin-bottom:18px;">
-          <div class="stat-box">
-            <span class="stat-val">80%</span>
-            <div class="stat-lbl">GMV Growth YoY</div>
-          </div>
-          <div class="stat-box">
-            <span class="stat-val">Top 5</span>
-            <div class="stat-lbl">Shopee Beddings</div>
-          </div>
-          <div class="stat-box">
-            <span class="stat-val">15%</span>
-            <div class="stat-lbl">Total E-Com Sales</div>
-          </div>
-          <div class="stat-box">
-            <span class="stat-val">3</span>
-            <div class="stat-lbl">Platforms Covered</div>
-          </div>
-        </div>
+          <hr class="card-divider" />
 
-        <hr class="card-divider"/>
-
-        <!-- Dashboard images -->
-        <div class="proj-section-label" style="margin-bottom:10px;">Dashboard Showcase</div>
-
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:6px;">
-          <!-- Image 1 -->
-          <div>
-            <div style="border-radius:10px;overflow:hidden;border:0.5px solid var(--border);background:#fff;">
-              <img src="live_dash_1.jpg" alt="Livestream Dashboard — Power BI version" style="width:100%;display:block;"/>
-            </div>
-            <p style="font-size:11px;color:var(--muted);margin-top:6px;text-align:center;line-height:1.5;">
-              <strong style="color:var(--ink);">v1 — Power BI</strong><br/>
-              First version · Multi-platform GMV, traffic & host breakdown<br/>
-              <em style="font-size:10px;">⚠️ Numbers illustrative — data randomised for privacy</em>
-            </p>
-          </div>
-          <!-- Image 2 -->
-          <div>
-            <div style="border-radius:10px;overflow:hidden;border:0.5px solid var(--border);background:#fff;">
-              <img src="live_dash_2.jpg" alt="Livestream Dashboard — Google Sheets revamp" style="width:100%;display:block;"/>
-            </div>
-            <p style="font-size:11px;color:var(--muted);margin-top:6px;text-align:center;line-height:1.5;">
-              <strong style="color:var(--ink);">v2 — Google Sheets Revamp</strong><br/>
-              Redesigned to fit brand identity · Session & host deep-dive<br/>
-              <em style="font-size:10px;">⚠️ Numbers illustrative — data randomised for privacy</em>
-            </p>
-          </div>
-        </div>
-
-        <hr class="card-divider"/>
-
-        <div class="proj-section">
-          <div class="proj-section-label">Tools</div>
-          <div class="tool-row">
-            <span class="tool-pill">Power BI</span>
-            <span class="tool-pill">Google Sheets</span>
-            <span class="tool-pill">Shopee Live</span>
-            <span class="tool-pill">TikTok Shop</span>
-            <span class="tool-pill">Lazada Seller Center</span>
-            <span class="tool-pill">Campaign Planning</span>
-            <span class="tool-pill">Customer Segmentation</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- PROJECT 03 -->
-    <div class="proj-card fade-up">
-      <div class="proj-stripe teal"></div>
-      <div class="proj-body">
-        <div class="proj-meta">
-          <span class="proj-num">03.</span>
-          <span class="proj-badge badge-green">Current · Shopee</span>
-          <span class="proj-year">2025</span>
-        </div>
-        <h2 class="proj-title">Seller Portal —<br/><em>Centralized KAM Data System</em></h2>
-        <p class="proj-org">Shopee · Key Account Management · Beauty & FMCG Category</p>
-
-        <hr class="card-divider"/>
-
-        <div class="proj-section">
-          <div class="proj-section-label">The Problem</div>
-          <p>Shopee's Seller Center scatters data across multiple tabs — campaign metrics, FBS status, offsite performance, and GMV all live in different places. Every KAM spent <strong>40–50 minutes each morning</strong> manually collecting and copying data before they could even start their actual work.</p>
-        </div>
-
-        <div class="proj-section">
-          <div class="proj-section-label">What I Built</div>
-          <p><strong>Seller Portal</strong> — a centralized Google Sheet that auto-pulls and consolidates all key seller metrics from multiple data sources into one unified, always-up-to-date view. KAMs open one sheet in the morning and immediately see the full picture: GMV, campaign participation, FBS rates, and offsite spend — all by KAM and by shop. Collaborated with team leads and the Beauty Category Manager to scope requirements and design the data architecture.</p>
-        </div>
-
-        <div class="proj-section">
-          <div class="proj-section-label">Outcome</div>
-          <div class="outcome-row">
-            <div class="stat-box">
-              <span class="stat-val">40–50m</span>
-              <div class="stat-lbl">Saved per KAM per day</div>
-            </div>
-            <div class="stat-box">
-              <span class="stat-val">+12%</span>
-              <div class="stat-lbl">Portfolio Performance</div>
-            </div>
-            <div class="stat-box">
-              <span class="stat-val">40+</span>
-              <div class="stat-lbl">Sellers Tracked</div>
-            </div>
-          </div>
-        </div>
-
-        <hr class="card-divider"/>
-
-        <div class="proj-section">
-          <div class="proj-section-label">Tools & Methods</div>
-          <div class="tool-row">
-            <span class="tool-pill">Google Sheets</span>
-            <span class="tool-pill">Google Apps Script</span>
-            <span class="tool-pill">Shopee Seller Center</span>
-            <span class="tool-pill">Data Architecture</span>
-            <span class="tool-pill">Dashboard Design</span>
-            <span class="tool-pill">Process Automation</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- PROJECT 04 — BEAUTY BOT -->
-    <div class="proj-card fade-up" id="beauty-bot">
-      <div class="proj-stripe" style="background: linear-gradient(90deg, #7c3aed, #a855f7);"></div>
-      <div class="proj-body">
-        <div class="proj-meta">
-          <span class="proj-num">04.</span>
-          <span class="proj-badge" style="background:#f3e8ff;color:#6b21a8;">Current · Shopee · AI</span>
-          <span class="proj-year">2025</span>
-        </div>
-        <h2 class="proj-title">Beauty Bot —<br/><em>Agentic AI Market Intelligence</em></h2>
-        <p class="proj-org">Shopee · FMCG & Beauty Category · Powered by SMART (SEA Multi-Agent Realisation Technology)</p>
-
-        <hr class="card-divider"/>
-
-        <!-- THE PROBLEM -->
-        <div class="proj-section">
-          <div class="proj-section-label">The Problem</div>
-          <p>KAMs and team leads needed to stay ahead of daily market movements in Korea and China beauty — but reading, filtering, and summarizing industry news across multiple sources took significant time every morning. There was no structured, fast way to surface the <strong>most relevant signals</strong> and translate them into actionable steps for Shopee sellers.</p>
-        </div>
-
-        <!-- WHAT I BUILT -->
-        <div class="proj-section">
-          <div class="proj-section-label">What I Built</div>
-          <p>Designed and deployed <strong>Beauty Bot</strong> — a no-code multi-agent AI system built on Shopee's internal SMART platform. Every morning, the bot automatically scans trusted sources across e-commerce, FMCG, and Asia beauty markets, filters the 3 most recent and relevant articles, summarizes key points, estimates business impact for Shopee, and delivers structured insights with actionable next steps — all before the team starts their day.</p>
-        </div>
-
-        <!-- ARCHITECTURE -->
-        <div class="proj-section">
-          <div class="proj-section-label">System Architecture</div>
-
-          <!-- Architecture flow diagram -->
-          <div style="background:#faf9f7;border:0.5px solid var(--border);border-radius:12px;padding:20px;margin-bottom:16px;overflow-x:auto;">
-            <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;min-width:500px;">
-
-              <!-- Step 1 -->
-              <div style="background:#f3e8ff;border:0.5px solid #d8b4fe;border-radius:10px;padding:12px 14px;text-align:center;min-width:110px;">
-                <div style="font-size:18px;margin-bottom:4px;">⏰</div>
-                <div style="font-size:11px;font-weight:500;color:#6b21a8;">Daily Trigger</div>
-                <div style="font-size:10px;color:#7e22ce;margin-top:2px;">Automated schedule<br/>every morning</div>
-              </div>
-
-              <div style="font-size:18px;color:#bbb;">→</div>
-
-              <!-- Step 2 -->
-              <div style="background:#eff6ff;border:0.5px solid #bfdbfe;border-radius:10px;padding:12px 14px;text-align:center;min-width:110px;">
-                <div style="font-size:18px;margin-bottom:4px;">🔍</div>
-                <div style="font-size:11px;font-weight:500;color:#1d4ed8;">Web Search Agent</div>
-                <div style="font-size:10px;color:#1e40af;margin-top:2px;">Scans trusted sources<br/>last 3 months</div>
-              </div>
-
-              <div style="font-size:18px;color:#bbb;">→</div>
-
-              <!-- Step 3 -->
-              <div style="background:#fef3c7;border:0.5px solid #fde68a;border-radius:10px;padding:12px 14px;text-align:center;min-width:110px;">
-                <div style="font-size:18px;margin-bottom:4px;">🧠</div>
-                <div style="font-size:11px;font-weight:500;color:#92400e;">Analysis Agent</div>
-                <div style="font-size:10px;color:#78350f;margin-top:2px;">GPT-4.1-mini + Gemini<br/>summarize & score</div>
-              </div>
-
-              <div style="font-size:18px;color:#bbb;">→</div>
-
-              <!-- Step 4 -->
-              <div style="background:var(--teal-light);border:0.5px solid #6ee7b7;border-radius:10px;padding:12px 14px;text-align:center;min-width:110px;">
-                <div style="font-size:18px;margin-bottom:4px;">📚</div>
-                <div style="font-size:11px;font-weight:500;color:var(--teal-dark);">Shopee Knowledge</div>
-                <div style="font-size:10px;color:var(--teal-dark);margin-top:2px;">Shopee Uni + internal<br/>data & playbooks</div>
-              </div>
-
-              <div style="font-size:18px;color:#bbb;">→</div>
-
-              <!-- Step 5 -->
-              <div style="background:#fce7f3;border:0.5px solid #fbcfe8;border-radius:10px;padding:12px 14px;text-align:center;min-width:110px;">
-                <div style="font-size:18px;margin-bottom:4px;">📤</div>
-                <div style="font-size:11px;font-weight:500;color:#9d174d;">Output Agent</div>
-                <div style="font-size:10px;color:#831843;margin-top:2px;">Structured report<br/>delivered to team</div>
-              </div>
-
-            </div>
-
-            <!-- Platform note -->
-            <div style="margin-top:14px;padding-top:12px;border-top:0.5px solid var(--border);font-size:11.5px;color:var(--muted);">
-              <strong style="color:var(--ink);">Platform:</strong> Built on SMART (SEA Multi-Agent Realisation Technology) — Shopee's internal no-code LLM agent builder. Multi-agent architecture with tool integrations, knowledge base connectors, and scheduled triggers.
-            </div>
-          </div>
-        </div>
-
-        <!-- SOURCES & FOCUS -->
-        <div class="proj-section">
-          <div class="proj-section-label">Coverage & Sources</div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+          <!-- Two-col: problem + what built -->
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px;">
             <div style="background:var(--soft);border-radius:10px;padding:14px;">
-              <div style="font-size:11px;font-weight:500;color:var(--teal);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">Focus Markets</div>
-              <div style="display:flex;flex-wrap:wrap;gap:6px;">
-                <span class="tool-pill">🇰🇷 Korea Beauty</span>
-                <span class="tool-pill">🇨🇳 China Beauty</span>
-                <span class="tool-pill">🌏 SEA E-Commerce</span>
-                <span class="tool-pill">FMCG Trends</span>
-              </div>
+              <div class="proj-section-label" style="margin-bottom:6px;">Problem</div>
+              <p style="font-size:13px;color:var(--muted);line-height:1.65;">No livestream presence. Reporting was
+                <strong>fully manual</strong> — copy-paste across 3 platforms daily with no unified view.</p>
             </div>
             <div style="background:var(--soft);border-radius:10px;padding:14px;">
-              <div style="font-size:11px;font-weight:500;color:var(--teal);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">Trusted Sources</div>
-              <div style="display:flex;flex-wrap:wrap;gap:6px;">
-                <span class="tool-pill">Tech in Asia</span>
-                <span class="tool-pill">Ecommercenews.asia</span>
-                <span class="tool-pill">Nikkei Asia</span>
-                <span class="tool-pill">Jing Daily</span>
+              <div class="proj-section-label" style="margin-bottom:6px;">What I Built</div>
+              <p style="font-size:13px;color:var(--muted);line-height:1.65;">Built livestream workflow from zero +
+                <strong>automated dashboard</strong> replacing manual reporting with a real-time snapshot.</p>
+            </div>
+          </div>
+
+          <!-- Outcome stats -->
+          <div class="outcome-row" style="margin-bottom:18px;">
+            <div class="stat-box">
+              <span class="stat-val">80%</span>
+              <div class="stat-lbl">GMV Growth YoY</div>
+            </div>
+            <div class="stat-box">
+              <span class="stat-val">Top 5</span>
+              <div class="stat-lbl">Shopee Beddings</div>
+            </div>
+            <div class="stat-box">
+              <span class="stat-val">15%</span>
+              <div class="stat-lbl">Total E-Com Sales</div>
+            </div>
+            <div class="stat-box">
+              <span class="stat-val">3</span>
+              <div class="stat-lbl">Platforms Covered</div>
+            </div>
+          </div>
+
+          <hr class="card-divider" />
+
+          <!-- Dashboard images -->
+          <div class="proj-section-label" style="margin-bottom:10px;">Dashboard Showcase</div>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:6px;">
+            <!-- Image 1 -->
+            <div>
+              <div style="border-radius:10px;overflow:hidden;border:0.5px solid var(--border);background:#fff;">
+                <img src="assest/live_dash_1.jpg" alt="Livestream Dashboard — Power BI version"
+                  style="width:100%;display:block;" />
               </div>
+              <p style="font-size:11px;color:var(--muted);margin-top:6px;text-align:center;line-height:1.5;">
+                <strong style="color:var(--ink);">v1 — Power BI</strong><br />
+                First version · Multi-platform GMV, traffic & host breakdown<br />
+                <em style="font-size:10px;">⚠️ Numbers illustrative — data randomised for privacy</em>
+              </p>
+            </div>
+            <!-- Image 2 -->
+            <div>
+              <div style="border-radius:10px;overflow:hidden;border:0.5px solid var(--border);background:#fff;">
+                <img src="assest/live_dash_2.jpg" alt="Livestream Dashboard — Google Sheets revamp"
+                  style="width:100%;display:block;" />
+              </div>
+              <p style="font-size:11px;color:var(--muted);margin-top:6px;text-align:center;line-height:1.5;">
+                <strong style="color:var(--ink);">v2 — Google Sheets Revamp</strong><br />
+                Redesigned to fit brand identity · Session & host deep-dive<br />
+                <em style="font-size:10px;">⚠️ Numbers illustrative — data randomised for privacy</em>
+              </p>
             </div>
           </div>
-        </div>
 
-        <!-- SAMPLE OUTPUT -->
-        <div class="proj-section">
-          <div class="proj-section-label">Sample Daily Output Format</div>
-          <div style="background:#1a1a1a;border-radius:12px;padding:20px;color:#e5e5e5;font-size:13px;line-height:1.7;">
-            <div style="color:#a855f7;font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:12px;">📊 Daily Beauty & E-Commerce Intelligence · Asia</div>
+          <hr class="card-divider" />
 
-            <div style="margin-bottom:14px;">
-              <div style="color:#fff;font-weight:500;margin-bottom:3px;">1. Indonesia's Beauty Commerce Landscape</div>
-              <div style="color:#a3a3a3;font-size:12px;margin-bottom:4px;"><span style="color:#6ee7b7;">Key Point:</span> TikTok Shop continues to grow aggressively, signalling a shift towards social commerce dominance in SEA.</div>
-              <div style="color:#a3a3a3;font-size:12px;"><span style="color:#fbbf24;">Shopee Insight:</span> KAMs should monitor TikTok Shop's beauty brand collaborations to identify gaps and leverage social commerce opportunities.</div>
+          <div class="proj-section">
+            <div class="proj-section-label">Tools</div>
+            <div class="tool-row">
+              <span class="tool-pill">Power BI</span>
+              <span class="tool-pill">Google Sheets</span>
+              <span class="tool-pill">Shopee Live</span>
+              <span class="tool-pill">TikTok Shop</span>
+              <span class="tool-pill">Lazada Seller Center</span>
+              <span class="tool-pill">Campaign Planning</span>
+              <span class="tool-pill">Customer Segmentation</span>
             </div>
-
-            <div style="border-top:0.5px solid #333;padding-top:14px;margin-bottom:14px;">
-              <div style="color:#fff;font-weight:500;margin-bottom:3px;">2. Livestreaming Commerce Boom in China</div>
-              <div style="color:#a3a3a3;font-size:12px;margin-bottom:4px;"><span style="color:#6ee7b7;">Key Point:</span> Influencer-led livestreaming integrates more interactive and personalized shopping experiences for luxury and local brands.</div>
-              <div style="color:#a3a3a3;font-size:12px;"><span style="color:#fbbf24;">Shopee Insight:</span> Enhance livestreaming with influencer collaborations and real-time engagement features to capture Chinese consumer trends.</div>
-            </div>
-
-            <div style="border-top:0.5px solid #333;padding-top:14px;">
-              <div style="color:#888;font-size:11px;font-style:italic;">+ 4 more insights delivered daily with source links & recommended next actions</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- OUTCOME -->
-        <div class="proj-section">
-          <div class="proj-section-label">Outcome</div>
-          <div class="outcome-row">
-            <div class="stat-box" style="background:#f3e8ff;border-color:#d8b4fe;">
-              <span class="stat-val" style="color:#7c3aed;">Daily</span>
-              <div class="stat-lbl" style="color:#6b21a8;">Automated delivery</div>
-            </div>
-            <div class="stat-box" style="background:#f3e8ff;border-color:#d8b4fe;">
-              <span class="stat-val" style="color:#7c3aed;">6+</span>
-              <div class="stat-lbl" style="color:#6b21a8;">Insights per report</div>
-            </div>
-            <div class="stat-box" style="background:#f3e8ff;border-color:#d8b4fe;">
-              <span class="stat-val" style="color:#7c3aed;">Team</span>
-              <div class="stat-lbl" style="color:#6b21a8;">Piloted at lead level</div>
-            </div>
-          </div>
-          <p style="font-size:13.5px;color:var(--muted);margin-top:14px;line-height:1.7;">Successfully piloted at the team lead level. Delivers quick, Shopee-contextualized insights every morning — particularly covering China and Korea beauty market movements that directly influence SEA strategy.</p>
-        </div>
-
-        <hr class="card-divider"/>
-
-        <!-- TOOLS -->
-        <div class="proj-section">
-          <div class="proj-section-label">Tools & Stack</div>
-          <div class="tool-row">
-            <span class="tool-pill">SMART Platform</span>
-            <span class="tool-pill">GPT-4.1-mini</span>
-            <span class="tool-pill">Gemini</span>
-            <span class="tool-pill">Multi-Agent Architecture</span>
-            <span class="tool-pill">No-Code Builder</span>
-            <span class="tool-pill">Shopee Knowledge Base</span>
-            <span class="tool-pill">Web Search Integration</span>
-            <span class="tool-pill">Automated Scheduling</span>
           </div>
         </div>
       </div>
-    </div>
 
-  </section>
+      <!-- PROJECT 03 -->
+      <div class="proj-card fade-up">
+        <div class="proj-stripe teal"></div>
+        <div class="proj-body">
+          <div class="proj-meta">
+            <span class="proj-num">03.</span>
+            <span class="proj-badge badge-green">Current · Shopee</span>
+            <span class="proj-year">2025</span>
+          </div>
+          <h2 class="proj-title">Seller Portal —<br /><em>Centralized KAM Data System</em></h2>
+          <p class="proj-org">Shopee · Key Account Management · Beauty & FMCG Category</p>
 
-  <footer>
-    Nguyen Tien Phat © 2025 ·
-    <a href="index.html">← Back to About</a>
-  </footer>
-</div>
+          <hr class="card-divider" />
 
-<script>
-// ─── ANTIGRAVITY (same engine as index.html) ──────────────────────────
-let agActive = false, particles = [], rafId = null;
-let dragTarget = null, dragOffX = 0, dragOffY = 0;
-let lastMX = 0, lastMY = 0, velX = 0, velY = 0;
+          <div class="proj-section">
+            <div class="proj-section-label">The Problem</div>
+            <p>Shopee's Seller Center scatters data across multiple tabs — campaign metrics, FBS status, offsite
+              performance, and GMV all live in different places. Every KAM spent <strong>40–50 minutes each
+                morning</strong> manually collecting and copying data before they could even start their actual work.
+            </p>
+          </div>
 
-const SELECTORS = [
-  '.hero-tag','.hero h1','.hero-sub',
-  '.proj-num','.proj-title','.proj-org',
-  '.proj-badge','.stat-box','.tool-pill',
-  '.section-label','footer'
-];
+          <div class="proj-section">
+            <div class="proj-section-label">What I Built</div>
+            <p><strong>Seller Portal</strong> — a centralized Google Sheet that auto-pulls and consolidates all key
+              seller metrics from multiple data sources into one unified, always-up-to-date view. KAMs open one sheet in
+              the morning and immediately see the full picture: GMV, campaign participation, FBS rates, and offsite
+              spend — all by KAM and by shop. Collaborated with team leads and the Beauty Category Manager to scope
+              requirements and design the data architecture.</p>
+          </div>
 
-function toggleAG() { agActive ? resetAG() : launchAG(); }
+          <div class="proj-section">
+            <div class="proj-section-label">Outcome</div>
+            <div class="outcome-row">
+              <div class="stat-box">
+                <span class="stat-val">40–50m</span>
+                <div class="stat-lbl">Saved per KAM per day</div>
+              </div>
+              <div class="stat-box">
+                <span class="stat-val">+12%</span>
+                <div class="stat-lbl">Portfolio Performance</div>
+              </div>
+              <div class="stat-box">
+                <span class="stat-val">40+</span>
+                <div class="stat-lbl">Sellers Tracked</div>
+              </div>
+            </div>
+          </div>
 
-function launchAG() {
-  agActive = true;
-  document.getElementById('agBtn').classList.add('on');
-  document.getElementById('agLabel').textContent = 'Reset ↺';
-  document.getElementById('agHint').classList.add('show');
+          <hr class="card-divider" />
 
-  const collected = [];
-  SELECTORS.forEach(sel => document.querySelectorAll(sel).forEach(el => collected.push(el)));
+          <div class="proj-section">
+            <div class="proj-section-label">Tools & Methods</div>
+            <div class="tool-row">
+              <span class="tool-pill">Google Sheets</span>
+              <span class="tool-pill">Google Apps Script</span>
+              <span class="tool-pill">Shopee Seller Center</span>
+              <span class="tool-pill">Data Architecture</span>
+              <span class="tool-pill">Dashboard Design</span>
+              <span class="tool-pill">Process Automation</span>
+            </div>
+          </div>
+        </div>
+      </div>
 
-  particles = [];
-  collected.forEach(el => {
-    const rect = el.getBoundingClientRect();
-    if (!rect.width || !rect.height) return;
+      <!-- PROJECT 04 — BEAUTY BOT -->
+      <div class="proj-card fade-up" id="beauty-bot">
+        <div class="proj-stripe" style="background: linear-gradient(90deg, #7c3aed, #a855f7);"></div>
+        <div class="proj-body">
+          <div class="proj-meta">
+            <span class="proj-num">04.</span>
+            <span class="proj-badge" style="background:#f3e8ff;color:#6b21a8;">Current · Shopee · AI</span>
+            <span class="proj-year">2025</span>
+          </div>
+          <h2 class="proj-title">Beauty Bot —<br /><em>Agentic AI Market Intelligence</em></h2>
+          <p class="proj-org">Shopee · FMCG & Beauty Category · Powered by SMART (SEA Multi-Agent Realisation
+            Technology)</p>
 
-    const fly = document.createElement('div');
-    fly.className = 'fly-el';
-    fly.innerHTML = el.innerHTML || el.textContent;
-    const cs = getComputedStyle(el);
-    fly.style.cssText = `
+          <hr class="card-divider" />
+
+          <!-- THE PROBLEM -->
+          <div class="proj-section">
+            <div class="proj-section-label">The Problem</div>
+            <p>KAMs and team leads needed to stay ahead of daily market movements in Korea and China beauty — but
+              reading, filtering, and summarizing industry news across multiple sources took significant time every
+              morning. There was no structured, fast way to surface the <strong>most relevant signals</strong> and
+              translate them into actionable steps for Shopee sellers.</p>
+          </div>
+
+          <!-- WHAT I BUILT -->
+          <div class="proj-section">
+            <div class="proj-section-label">What I Built</div>
+            <p>Designed and deployed <strong>Beauty Bot</strong> — a no-code multi-agent AI system built on Shopee's
+              internal SMART platform. Every morning, the bot automatically scans trusted sources across e-commerce,
+              FMCG, and Asia beauty markets, filters the 3 most recent and relevant articles, summarizes key points,
+              estimates business impact for Shopee, and delivers structured insights with actionable next steps — all
+              before the team starts their day.</p>
+          </div>
+
+          <!-- ARCHITECTURE -->
+          <div class="proj-section">
+            <div class="proj-section-label">System Architecture</div>
+
+            <!-- Architecture flow diagram -->
+            <div
+              style="background:#faf9f7;border:0.5px solid var(--border);border-radius:12px;padding:20px;margin-bottom:16px;overflow-x:auto;">
+              <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;min-width:500px;">
+
+                <!-- Step 1 -->
+                <div
+                  style="background:#f3e8ff;border:0.5px solid #d8b4fe;border-radius:10px;padding:12px 14px;text-align:center;min-width:110px;">
+                  <div style="font-size:18px;margin-bottom:4px;">⏰</div>
+                  <div style="font-size:11px;font-weight:500;color:#6b21a8;">Daily Trigger</div>
+                  <div style="font-size:10px;color:#7e22ce;margin-top:2px;">Automated schedule<br />every morning</div>
+                </div>
+
+                <div style="font-size:18px;color:#bbb;">→</div>
+
+                <!-- Step 2 -->
+                <div
+                  style="background:#eff6ff;border:0.5px solid #bfdbfe;border-radius:10px;padding:12px 14px;text-align:center;min-width:110px;">
+                  <div style="font-size:18px;margin-bottom:4px;">🔍</div>
+                  <div style="font-size:11px;font-weight:500;color:#1d4ed8;">Web Search Agent</div>
+                  <div style="font-size:10px;color:#1e40af;margin-top:2px;">Scans trusted sources<br />last 3 months
+                  </div>
+                </div>
+
+                <div style="font-size:18px;color:#bbb;">→</div>
+
+                <!-- Step 3 -->
+                <div
+                  style="background:#fef3c7;border:0.5px solid #fde68a;border-radius:10px;padding:12px 14px;text-align:center;min-width:110px;">
+                  <div style="font-size:18px;margin-bottom:4px;">🧠</div>
+                  <div style="font-size:11px;font-weight:500;color:#92400e;">Analysis Agent</div>
+                  <div style="font-size:10px;color:#78350f;margin-top:2px;">GPT-4.1-mini + Gemini<br />summarize & score
+                  </div>
+                </div>
+
+                <div style="font-size:18px;color:#bbb;">→</div>
+
+                <!-- Step 4 -->
+                <div
+                  style="background:var(--teal-light);border:0.5px solid #6ee7b7;border-radius:10px;padding:12px 14px;text-align:center;min-width:110px;">
+                  <div style="font-size:18px;margin-bottom:4px;">📚</div>
+                  <div style="font-size:11px;font-weight:500;color:var(--teal-dark);">Shopee Knowledge</div>
+                  <div style="font-size:10px;color:var(--teal-dark);margin-top:2px;">Shopee Uni + internal<br />data &
+                    playbooks</div>
+                </div>
+
+                <div style="font-size:18px;color:#bbb;">→</div>
+
+                <!-- Step 5 -->
+                <div
+                  style="background:#fce7f3;border:0.5px solid #fbcfe8;border-radius:10px;padding:12px 14px;text-align:center;min-width:110px;">
+                  <div style="font-size:18px;margin-bottom:4px;">📤</div>
+                  <div style="font-size:11px;font-weight:500;color:#9d174d;">Output Agent</div>
+                  <div style="font-size:10px;color:#831843;margin-top:2px;">Structured report<br />delivered to team
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Platform note -->
+              <div
+                style="margin-top:14px;padding-top:12px;border-top:0.5px solid var(--border);font-size:11.5px;color:var(--muted);">
+                <strong style="color:var(--ink);">Platform:</strong> Built on SMART (SEA Multi-Agent Realisation
+                Technology) — Shopee's internal no-code LLM agent builder. Multi-agent architecture with tool
+                integrations, knowledge base connectors, and scheduled triggers.
+              </div>
+            </div>
+          </div>
+
+          <!-- SOURCES & FOCUS -->
+          <div class="proj-section">
+            <div class="proj-section-label">Coverage & Sources</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+              <div style="background:var(--soft);border-radius:10px;padding:14px;">
+                <div
+                  style="font-size:11px;font-weight:500;color:var(--teal);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">
+                  Focus Markets</div>
+                <div style="display:flex;flex-wrap:wrap;gap:6px;">
+                  <span class="tool-pill">🇰🇷 Korea Beauty</span>
+                  <span class="tool-pill">🇨🇳 China Beauty</span>
+                  <span class="tool-pill">🌏 SEA E-Commerce</span>
+                  <span class="tool-pill">FMCG Trends</span>
+                </div>
+              </div>
+              <div style="background:var(--soft);border-radius:10px;padding:14px;">
+                <div
+                  style="font-size:11px;font-weight:500;color:var(--teal);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">
+                  Trusted Sources</div>
+                <div style="display:flex;flex-wrap:wrap;gap:6px;">
+                  <span class="tool-pill">Tech in Asia</span>
+                  <span class="tool-pill">Ecommercenews.asia</span>
+                  <span class="tool-pill">Nikkei Asia</span>
+                  <span class="tool-pill">Jing Daily</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SAMPLE OUTPUT -->
+          <div class="proj-section">
+            <div class="proj-section-label">Sample Daily Output Format</div>
+            <div
+              style="background:#1a1a1a;border-radius:12px;padding:20px;color:#e5e5e5;font-size:13px;line-height:1.7;">
+              <div
+                style="color:#a855f7;font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:12px;">
+                📊 Daily Beauty & E-Commerce Intelligence · Asia</div>
+
+              <div style="margin-bottom:14px;">
+                <div style="color:#fff;font-weight:500;margin-bottom:3px;">1. Indonesia's Beauty Commerce Landscape
+                </div>
+                <div style="color:#a3a3a3;font-size:12px;margin-bottom:4px;"><span style="color:#6ee7b7;">Key
+                    Point:</span> TikTok Shop continues to grow aggressively, signalling a shift towards social commerce
+                  dominance in SEA.</div>
+                <div style="color:#a3a3a3;font-size:12px;"><span style="color:#fbbf24;">Shopee Insight:</span> KAMs
+                  should monitor TikTok Shop's beauty brand collaborations to identify gaps and leverage social commerce
+                  opportunities.</div>
+              </div>
+
+              <div style="border-top:0.5px solid #333;padding-top:14px;margin-bottom:14px;">
+                <div style="color:#fff;font-weight:500;margin-bottom:3px;">2. Livestreaming Commerce Boom in China</div>
+                <div style="color:#a3a3a3;font-size:12px;margin-bottom:4px;"><span style="color:#6ee7b7;">Key
+                    Point:</span> Influencer-led livestreaming integrates more interactive and personalized shopping
+                  experiences for luxury and local brands.</div>
+                <div style="color:#a3a3a3;font-size:12px;"><span style="color:#fbbf24;">Shopee Insight:</span> Enhance
+                  livestreaming with influencer collaborations and real-time engagement features to capture Chinese
+                  consumer trends.</div>
+              </div>
+
+              <div style="border-top:0.5px solid #333;padding-top:14px;">
+                <div style="color:#888;font-size:11px;font-style:italic;">+ 4 more insights delivered daily with source
+                  links & recommended next actions</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- OUTCOME -->
+          <div class="proj-section">
+            <div class="proj-section-label">Outcome</div>
+            <div class="outcome-row">
+              <div class="stat-box" style="background:#f3e8ff;border-color:#d8b4fe;">
+                <span class="stat-val" style="color:#7c3aed;">Daily</span>
+                <div class="stat-lbl" style="color:#6b21a8;">Automated delivery</div>
+              </div>
+              <div class="stat-box" style="background:#f3e8ff;border-color:#d8b4fe;">
+                <span class="stat-val" style="color:#7c3aed;">6+</span>
+                <div class="stat-lbl" style="color:#6b21a8;">Insights per report</div>
+              </div>
+              <div class="stat-box" style="background:#f3e8ff;border-color:#d8b4fe;">
+                <span class="stat-val" style="color:#7c3aed;">Team</span>
+                <div class="stat-lbl" style="color:#6b21a8;">Piloted at lead level</div>
+              </div>
+            </div>
+            <p style="font-size:13.5px;color:var(--muted);margin-top:14px;line-height:1.7;">Successfully piloted at the
+              team lead level. Delivers quick, Shopee-contextualized insights every morning — particularly covering
+              China and Korea beauty market movements that directly influence SEA strategy.</p>
+          </div>
+
+          <hr class="card-divider" />
+
+          <!-- TOOLS -->
+          <div class="proj-section">
+            <div class="proj-section-label">Tools & Stack</div>
+            <div class="tool-row">
+              <span class="tool-pill">SMART Platform</span>
+              <span class="tool-pill">GPT-4.1-mini</span>
+              <span class="tool-pill">Gemini</span>
+              <span class="tool-pill">Multi-Agent Architecture</span>
+              <span class="tool-pill">No-Code Builder</span>
+              <span class="tool-pill">Shopee Knowledge Base</span>
+              <span class="tool-pill">Web Search Integration</span>
+              <span class="tool-pill">Automated Scheduling</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <footer>
+      Nguyen Tien Phat © 2025 ·
+      <a href="index.html">← Back to About</a>
+    </footer>
+  </div>
+
+  <script>
+    // ─── ANTIGRAVITY (same engine as index.html) ──────────────────────────
+    let agActive = false, particles = [], rafId = null;
+    let dragTarget = null, dragOffX = 0, dragOffY = 0;
+    let lastMX = 0, lastMY = 0, velX = 0, velY = 0;
+
+    const SELECTORS = [
+      '.hero-tag', '.hero h1', '.hero-sub',
+      '.proj-num', '.proj-title', '.proj-org',
+      '.proj-badge', '.stat-box', '.tool-pill',
+      '.section-label', 'footer'
+    ];
+
+    function toggleAG() { agActive ? resetAG() : launchAG(); }
+
+    function launchAG() {
+      agActive = true;
+      document.getElementById('agBtn').classList.add('on');
+      document.getElementById('agLabel').textContent = 'Reset ↺';
+      document.getElementById('agHint').classList.add('show');
+
+      const collected = [];
+      SELECTORS.forEach(sel => document.querySelectorAll(sel).forEach(el => collected.push(el)));
+
+      particles = [];
+      collected.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (!rect.width || !rect.height) return;
+
+        const fly = document.createElement('div');
+        fly.className = 'fly-el';
+        fly.innerHTML = el.innerHTML || el.textContent;
+        const cs = getComputedStyle(el);
+        fly.style.cssText = `
       left:${rect.left}px; top:${rect.top}px;
       width:${rect.width}px; min-height:${rect.height}px;
       padding:${cs.padding};
@@ -712,72 +1053,73 @@ function launchAG() {
       justify-content:center; text-align:center; overflow:hidden;
       box-sizing:border-box;
     `;
-    document.body.appendChild(fly);
+        document.body.appendChild(fly);
 
-    const p = {
-      el, fly,
-      x: rect.left + rect.width / 2,
-      y: rect.top + rect.height / 2,
-      w: rect.width, h: rect.height,
-      vx: (Math.random() - 0.5) * 6,
-      vy: -(Math.random() * 10 + 5),
-      rot: 0, vrot: (Math.random() - 0.5) * 4,
-    };
-    particles.push(p);
-    el.dataset.origVis = el.style.visibility;
-    el.style.visibility = 'hidden';
+        const p = {
+          el, fly,
+          x: rect.left + rect.width / 2,
+          y: rect.top + rect.height / 2,
+          w: rect.width, h: rect.height,
+          vx: (Math.random() - 0.5) * 6,
+          vy: -(Math.random() * 10 + 5),
+          rot: 0, vrot: (Math.random() - 0.5) * 4,
+        };
+        particles.push(p);
+        el.dataset.origVis = el.style.visibility;
+        el.style.visibility = 'hidden';
 
-    fly.addEventListener('mousedown', e => beginDrag(e, p));
-    fly.addEventListener('touchstart', e => beginDragTouch(e, p), { passive: false });
-  });
+        fly.addEventListener('mousedown', e => beginDrag(e, p));
+        fly.addEventListener('touchstart', e => beginDragTouch(e, p), { passive: false });
+      });
 
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-  window.addEventListener('mousemove', onMove);
-  window.addEventListener('mouseup', onUp);
-  window.addEventListener('touchmove', onMoveTouch, { passive: false });
-  window.addEventListener('touchend', onUp);
-  loop();
-}
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.addEventListener('mousemove', onMove);
+      window.addEventListener('mouseup', onUp);
+      window.addEventListener('touchmove', onMoveTouch, { passive: false });
+      window.addEventListener('touchend', onUp);
+      loop();
+    }
 
-function loop() {
-  if (!agActive) return;
-  const W = window.innerWidth, H = window.innerHeight;
-  particles.forEach(p => {
-    if (p === dragTarget) return;
-    p.vy += -0.4; p.vx *= 0.988; p.vy *= 0.988;
-    p.rot += p.vrot; p.vrot *= 0.99;
-    p.x += p.vx; p.y += p.vy;
-    const hw = p.w/2, hh = p.h/2;
-    if (p.x-hw<0)  { p.x=hw;   p.vx= Math.abs(p.vx)*0.5; }
-    if (p.x+hw>W)  { p.x=W-hw; p.vx=-Math.abs(p.vx)*0.5; }
-    if (p.y-hh<0)  { p.y=hh;   p.vy= Math.abs(p.vy)*0.5; }
-    if (p.y+hh>H)  { p.y=H-hh; p.vy=-Math.abs(p.vy)*0.5; }
-    p.fly.style.left = (p.x-hw)+'px';
-    p.fly.style.top  = (p.y-hh)+'px';
-    p.fly.style.transform = `rotate(${p.rot}deg)`;
-    p.fly.style.position = 'fixed';
-  });
-  rafId = requestAnimationFrame(loop);
-}
+    function loop() {
+      if (!agActive) return;
+      const W = window.innerWidth, H = window.innerHeight;
+      particles.forEach(p => {
+        if (p === dragTarget) return;
+        p.vy += -0.4; p.vx *= 0.988; p.vy *= 0.988;
+        p.rot += p.vrot; p.vrot *= 0.99;
+        p.x += p.vx; p.y += p.vy;
+        const hw = p.w / 2, hh = p.h / 2;
+        if (p.x - hw < 0) { p.x = hw; p.vx = Math.abs(p.vx) * 0.5; }
+        if (p.x + hw > W) { p.x = W - hw; p.vx = -Math.abs(p.vx) * 0.5; }
+        if (p.y - hh < 0) { p.y = hh; p.vy = Math.abs(p.vy) * 0.5; }
+        if (p.y + hh > H) { p.y = H - hh; p.vy = -Math.abs(p.vy) * 0.5; }
+        p.fly.style.left = (p.x - hw) + 'px';
+        p.fly.style.top = (p.y - hh) + 'px';
+        p.fly.style.transform = `rotate(${p.rot}deg)`;
+        p.fly.style.position = 'fixed';
+      });
+      rafId = requestAnimationFrame(loop);
+    }
 
-function beginDrag(e,p) { e.preventDefault(); dragTarget=p; dragOffX=e.clientX-p.x; dragOffY=e.clientY-p.y; lastMX=e.clientX; lastMY=e.clientY; velX=velY=0; }
-function beginDragTouch(e,p) { e.preventDefault(); const t=e.touches[0]; dragTarget=p; dragOffX=t.clientX-p.x; dragOffY=t.clientY-p.y; lastMX=t.clientX; lastMY=t.clientY; velX=velY=0; }
-function onMove(e) { if(!dragTarget)return; velX=e.clientX-lastMX; velY=e.clientY-lastMY; lastMX=e.clientX; lastMY=e.clientY; dragTarget.x=e.clientX-dragOffX; dragTarget.y=e.clientY-dragOffY; dragTarget.fly.style.left=(dragTarget.x-dragTarget.w/2)+'px'; dragTarget.fly.style.top=(dragTarget.y-dragTarget.h/2)+'px'; }
-function onMoveTouch(e) { if(!dragTarget)return; const t=e.touches[0]; velX=t.clientX-lastMX; velY=t.clientY-lastMY; lastMX=t.clientX; lastMY=t.clientY; dragTarget.x=t.clientX-dragOffX; dragTarget.y=t.clientY-dragOffY; dragTarget.fly.style.left=(dragTarget.x-dragTarget.w/2)+'px'; dragTarget.fly.style.top=(dragTarget.y-dragTarget.h/2)+'px'; }
-function onUp() { if(!dragTarget)return; dragTarget.vx=velX*0.7; dragTarget.vy=velY*0.7; dragTarget.vrot=(Math.random()-0.5)*6; dragTarget=null; }
+    function beginDrag(e, p) { e.preventDefault(); dragTarget = p; dragOffX = e.clientX - p.x; dragOffY = e.clientY - p.y; lastMX = e.clientX; lastMY = e.clientY; velX = velY = 0; }
+    function beginDragTouch(e, p) { e.preventDefault(); const t = e.touches[0]; dragTarget = p; dragOffX = t.clientX - p.x; dragOffY = t.clientY - p.y; lastMX = t.clientX; lastMY = t.clientY; velX = velY = 0; }
+    function onMove(e) { if (!dragTarget) return; velX = e.clientX - lastMX; velY = e.clientY - lastMY; lastMX = e.clientX; lastMY = e.clientY; dragTarget.x = e.clientX - dragOffX; dragTarget.y = e.clientY - dragOffY; dragTarget.fly.style.left = (dragTarget.x - dragTarget.w / 2) + 'px'; dragTarget.fly.style.top = (dragTarget.y - dragTarget.h / 2) + 'px'; }
+    function onMoveTouch(e) { if (!dragTarget) return; const t = e.touches[0]; velX = t.clientX - lastMX; velY = t.clientY - lastMY; lastMX = t.clientX; lastMY = t.clientY; dragTarget.x = t.clientX - dragOffX; dragTarget.y = t.clientY - dragOffY; dragTarget.fly.style.left = (dragTarget.x - dragTarget.w / 2) + 'px'; dragTarget.fly.style.top = (dragTarget.y - dragTarget.h / 2) + 'px'; }
+    function onUp() { if (!dragTarget) return; dragTarget.vx = velX * 0.7; dragTarget.vy = velY * 0.7; dragTarget.vrot = (Math.random() - 0.5) * 6; dragTarget = null; }
 
-function resetAG() {
-  agActive=false; cancelAnimationFrame(rafId);
-  particles.forEach(p=>{ p.fly.remove(); p.el.style.visibility=p.el.dataset.origVis||''; });
-  particles=[]; dragTarget=null;
-  window.removeEventListener('mousemove',onMove);
-  window.removeEventListener('mouseup',onUp);
-  window.removeEventListener('touchmove',onMoveTouch);
-  window.removeEventListener('touchend',onUp);
-  document.getElementById('agBtn').classList.remove('on');
-  document.getElementById('agLabel').textContent='Antigravity';
-  document.getElementById('agHint').classList.remove('show');
-}
-</script>
+    function resetAG() {
+      agActive = false; cancelAnimationFrame(rafId);
+      particles.forEach(p => { p.fly.remove(); p.el.style.visibility = p.el.dataset.origVis || ''; });
+      particles = []; dragTarget = null;
+      window.removeEventListener('mousemove', onMove);
+      window.removeEventListener('mouseup', onUp);
+      window.removeEventListener('touchmove', onMoveTouch);
+      window.removeEventListener('touchend', onUp);
+      document.getElementById('agBtn').classList.remove('on');
+      document.getElementById('agLabel').textContent = 'Antigravity';
+      document.getElementById('agHint').classList.remove('show');
+    }
+  </script>
 </body>
+
 </html>
