@@ -87,6 +87,69 @@
       border-color: rgba(255, 255, 255, 0.15);
     }
 
+    /* ── NAV DROPDOWN ── */
+    .nav-dropdown {
+      position: relative;
+    }
+
+    .nav-dropdown-menu {
+      display: none;
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 0;
+      background: #1a1a1a;
+      border: 0.5px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+      padding: 6px;
+      min-width: 230px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+      z-index: 200;
+    }
+
+    .nav-dropdown:hover .nav-dropdown-menu,
+    .nav-dropdown:focus-within .nav-dropdown-menu {
+      display: block;
+    }
+
+    .nav-dropdown-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      border-radius: 8px;
+      text-decoration: none;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 12.5px;
+      transition: background 0.15s, color 0.15s;
+      white-space: nowrap;
+    }
+
+    .nav-dropdown-item:hover {
+      background: rgba(255, 255, 255, 0.07);
+      color: var(--white);
+    }
+
+    .nav-dropdown-item .dd-num {
+      font-family: 'DM Serif Display', serif;
+      font-size: 11px;
+      color: var(--teal);
+      opacity: 0.8;
+      font-style: italic;
+      flex-shrink: 0;
+    }
+
+    .nav-dropdown-divider {
+      border: none;
+      border-top: 0.5px solid rgba(255, 255, 255, 0.08);
+      margin: 4px 6px;
+    }
+
+    .nav-dropdown>.nav-link::after {
+      content: ' ▾';
+      font-size: 10px;
+      opacity: 0.5;
+    }
+
     /* ── HERO ── */
     .hero {
       background: var(--ink);
@@ -588,7 +651,26 @@
     <a class="nav-logo" href="index.html">Nguyen <em>Tien Phat</em></a>
     <div class="nav-links">
       <a class="nav-link" href="index.html">About</a>
-      <a class="nav-link active" href="projects.html">Projects</a>
+      <div class="nav-dropdown">
+        <a class="nav-link active" href="projects.html" tabindex="0">Projects</a>
+        <div class="nav-dropdown-menu">
+          <a class="nav-dropdown-item" href="#proj-01">
+            <span class="dd-num">01.</span> ARIMA Forecasting Model
+          </a>
+          <div class="nav-dropdown-divider"></div>
+          <a class="nav-dropdown-item" href="#proj-02">
+            <span class="dd-num">02.</span> Livestream Engine & Dashboard
+          </a>
+          <div class="nav-dropdown-divider"></div>
+          <a class="nav-dropdown-item" href="#proj-03">
+            <span class="dd-num">03.</span> Seller Portal
+          </a>
+          <div class="nav-dropdown-divider"></div>
+          <a class="nav-dropdown-item" href="#beauty-bot">
+            <span class="dd-num">04.</span> Beauty Bot — Agentic AI
+          </a>
+        </div>
+      </div>
     </div>
   </nav>
 
@@ -613,7 +695,7 @@
       <div class="section-label">Project List</div>
 
       <!-- PROJECT 01 -->
-      <div class="proj-card fade-up">
+      <div class="proj-card fade-up" id="proj-01">
         <div class="proj-stripe amber"></div>
         <div class="proj-body">
           <div class="proj-meta">
@@ -675,7 +757,7 @@
       </div>
 
       <!-- PROJECT 02 -->
-      <div class="proj-card fade-up">
+      <div class="proj-card fade-up" id="proj-02">
         <div class="proj-stripe coral"></div>
         <div class="proj-body">
           <div class="proj-meta">
@@ -775,7 +857,7 @@
       </div>
 
       <!-- PROJECT 03 -->
-      <div class="proj-card fade-up">
+      <div class="proj-card fade-up" id="proj-03">
         <div class="proj-stripe teal"></div>
         <div class="proj-body">
           <div class="proj-meta">
@@ -783,43 +865,125 @@
             <span class="proj-badge badge-green">Current · Shopee</span>
             <span class="proj-year">2025</span>
           </div>
-          <h2 class="proj-title">Seller Portal —<br /><em>Centralized KAM Data System</em></h2>
-          <p class="proj-org">Shopee · Key Account Management · Beauty & FMCG Category</p>
+          <h2 class="proj-title">Seller Portal —<br /><em>Centralized KAM Data Hub</em></h2>
+          <p class="proj-org">Shopee · Key Account Management · Beauty & FMCG · Primary users: C2C RMs</p>
 
           <hr class="card-divider" />
 
-          <div class="proj-section">
-            <div class="proj-section-label">The Problem</div>
-            <p>Shopee's Seller Center scatters data across multiple tabs — campaign metrics, FBS status, offsite
-              performance, and GMV all live in different places. Every KAM spent <strong>40–50 minutes each
-                morning</strong> manually collecting and copying data before they could even start their actual work.
-            </p>
+          <!-- Problem + What: two-col -->
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px;">
+            <div style="background:var(--soft);border-radius:10px;padding:14px;">
+              <div class="proj-section-label" style="margin-bottom:6px;">Problem</div>
+              <p style="font-size:13px;color:var(--muted);line-height:1.65;">Seller Center scatters KPI data across
+                multiple tabs. Every KAM spent <strong>40–50 min each morning</strong> copy-pasting before starting real
+                work.</p>
+            </div>
+            <div style="background:var(--soft);border-radius:10px;padding:14px;">
+              <div class="proj-section-label" style="margin-bottom:6px;">What I Built</div>
+              <p style="font-size:13px;color:var(--muted);line-height:1.65;"><strong>Seller Portal</strong> — a Google
+                Sheet that auto-pulls all key seller metrics from Datasuite daily into one unified view, by KAM and by
+                shop.</p>
+            </div>
           </div>
 
-          <div class="proj-section">
-            <div class="proj-section-label">What I Built</div>
-            <p><strong>Seller Portal</strong> — a centralized Google Sheet that auto-pulls and consolidates all key
-              seller metrics from multiple data sources into one unified, always-up-to-date view. KAMs open one sheet in
-              the morning and immediately see the full picture: GMV, campaign participation, FBS rates, and offsite
-              spend — all by KAM and by shop. Collaborated with team leads and the Beauty Category Manager to scope
-              requirements and design the data architecture.</p>
+          <!-- How it works flow -->
+          <div class="proj-section-label" style="margin-bottom:10px;">How It Works</div>
+          <div
+            style="background:#faf9f7;border:0.5px solid var(--border);border-radius:12px;padding:18px;margin-bottom:18px;overflow-x:auto;">
+            <div style="display:flex;align-items:stretch;gap:6px;min-width:480px;">
+              <div
+                style="background:var(--teal-light);border:0.5px solid #6ee7b7;border-radius:10px;padding:12px 14px;text-align:center;flex:1;">
+                <div style="font-size:18px;margin-bottom:4px;">🗄️</div>
+                <div style="font-size:11px;font-weight:500;color:var(--teal-dark);">Datasuite</div>
+                <div style="font-size:10px;color:var(--teal-dark);opacity:0.8;margin-top:2px;">Auto-sync<br />daily at
+                  16:00</div>
+              </div>
+              <div style="display:flex;align-items:center;color:#bbb;font-size:16px;">→</div>
+              <div
+                style="background:#eff6ff;border:0.5px solid #bfdbfe;border-radius:10px;padding:12px 14px;text-align:center;flex:1;">
+                <div style="font-size:18px;margin-bottom:4px;">📊</div>
+                <div style="font-size:11px;font-weight:500;color:#1d4ed8;">KPI Metrics Sheet</div>
+                <div style="font-size:10px;color:#1e40af;opacity:0.8;margin-top:2px;">GMV · Orders · Ads<br />Content ·
+                  AMS · FBS</div>
+              </div>
+              <div style="display:flex;align-items:center;color:#bbb;font-size:16px;">→</div>
+              <div
+                style="background:#fef3c7;border:0.5px solid #fde68a;border-radius:10px;padding:12px 14px;text-align:center;flex:1;">
+                <div style="font-size:18px;margin-bottom:4px;">📦</div>
+                <div style="font-size:11px;font-weight:500;color:#92400e;">FBS Tracker</div>
+                <div style="font-size:10px;color:#78350f;opacity:0.8;margin-top:2px;">Stock health<br />SKU coverage
+                </div>
+              </div>
+              <div style="display:flex;align-items:center;color:#bbb;font-size:16px;">→</div>
+              <div
+                style="background:#f3e8ff;border:0.5px solid #d8b4fe;border-radius:10px;padding:12px 14px;text-align:center;flex:1;">
+                <div style="font-size:18px;margin-bottom:4px;">🤖</div>
+                <div style="font-size:11px;font-weight:500;color:#6b21a8;">AI Recommender</div>
+                <div style="font-size:10px;color:#7e22ce;opacity:0.8;margin-top:2px;">Next actions<br />pitch scripts
+                </div>
+              </div>
+              <div style="display:flex;align-items:center;color:#bbb;font-size:16px;">→</div>
+              <div
+                style="background:#fce7f3;border:0.5px solid #fbcfe8;border-radius:10px;padding:12px 14px;text-align:center;flex:1;">
+                <div style="font-size:18px;margin-bottom:4px;">👤</div>
+                <div style="font-size:11px;font-weight:500;color:#9d174d;">KAM View</div>
+                <div style="font-size:10px;color:#831843;opacity:0.8;margin-top:2px;">One sheet<br />opens ready</div>
+              </div>
+            </div>
+            <div
+              style="margin-top:12px;padding-top:10px;border-top:0.5px solid var(--border);font-size:11px;color:var(--muted);">
+              Covers: Revenue · Marketing channels · Orders · AMS · Content · FBS stock health · Buyer profiles · W/M
+              comparison · AI-generated next steps
+            </div>
           </div>
 
-          <div class="proj-section">
-            <div class="proj-section-label">Outcome</div>
-            <div class="outcome-row">
-              <div class="stat-box">
-                <span class="stat-val">40–50m</span>
-                <div class="stat-lbl">Saved per KAM per day</div>
+          <!-- Value: BD vs Seller -->
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:18px;">
+            <div style="background:var(--soft);border-radius:10px;padding:14px;">
+              <div
+                style="font-size:10px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal);margin-bottom:8px;">
+                Value to KAM / BD</div>
+              <div style="display:flex;flex-direction:column;gap:6px;">
+                <div style="font-size:12.5px;color:var(--muted);">⚡ <strong style="color:var(--ink);">Reduce manual
+                    work</strong> — auto-updated daily</div>
+                <div style="font-size:12.5px;color:var(--muted);">🎯 <strong style="color:var(--ink);">Prioritize right
+                    sellers</strong> — highlights KPI movements</div>
+                <div style="font-size:12.5px;color:var(--muted);">💬 <strong style="color:var(--ink);">Stronger
+                    pitching</strong> — data-driven seller stories</div>
               </div>
-              <div class="stat-box">
-                <span class="stat-val">+12%</span>
-                <div class="stat-lbl">Portfolio Performance</div>
+            </div>
+            <div style="background:var(--soft);border-radius:10px;padding:14px;">
+              <div
+                style="font-size:10px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal);margin-bottom:8px;">
+                Value to Seller</div>
+              <div style="display:flex;flex-direction:column;gap:6px;">
+                <div style="font-size:12.5px;color:var(--muted);">📈 <strong style="color:var(--ink);">Clear growth
+                    visibility</strong> — revenue by channel</div>
+                <div style="font-size:12.5px;color:var(--muted);">📅 <strong style="color:var(--ink);">W/M
+                    tracking</strong> — with BD's support</div>
+                <div style="font-size:12.5px;color:var(--muted);">✅ <strong style="color:var(--ink);">Shopee
+                    alignment</strong> — recommended next steps</div>
               </div>
-              <div class="stat-box">
-                <span class="stat-val">40+</span>
-                <div class="stat-lbl">Sellers Tracked</div>
-              </div>
+            </div>
+          </div>
+
+          <!-- Outcome -->
+          <div class="outcome-row" style="margin-bottom:18px;">
+            <div class="stat-box">
+              <span class="stat-val">40–50m</span>
+              <div class="stat-lbl">Saved per KAM / day</div>
+            </div>
+            <div class="stat-box">
+              <span class="stat-val">+12%</span>
+              <div class="stat-lbl">Portfolio Performance</div>
+            </div>
+            <div class="stat-box">
+              <span class="stat-val">40+</span>
+              <div class="stat-lbl">Sellers Tracked</div>
+            </div>
+            <div class="stat-box">
+              <span class="stat-val">Daily</span>
+              <div class="stat-lbl">Auto-update</div>
             </div>
           </div>
 
@@ -829,11 +993,13 @@
             <div class="proj-section-label">Tools & Methods</div>
             <div class="tool-row">
               <span class="tool-pill">Google Sheets</span>
+              <span class="tool-pill">Datasuite</span>
               <span class="tool-pill">Google Apps Script</span>
               <span class="tool-pill">Shopee Seller Center</span>
               <span class="tool-pill">Data Architecture</span>
               <span class="tool-pill">Dashboard Design</span>
               <span class="tool-pill">Process Automation</span>
+              <span class="tool-pill">Built-in AI Tools</span>
             </div>
           </div>
         </div>
