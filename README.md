@@ -12,17 +12,17 @@ I bridge the gap between **Commercial Strategy** and **Technical Automation**. C
 
 * **The Problem:** Team Leads spend hours tracking FMCG movements in China/Korea.
 * **The Solution:** Engineered an AI agent that summarizes daily trends, estimates business impact, and recommends next actions.
-* **Tech Stack:** Applied AI, Python, Market Synthesis.
+* **Tech Stack:** Applied AI, Python, Market Synthesis, Multi-agent models.
 
 ### 📊 Seller Portal: Centralized Data Hub
 *A "one-view" dashboard for real-time seller performance tracking.*
 
-* **Impact:** Reduced daily reporting time by **40–50 minutes per KAM**.
+* **Impact:** Reduced daily reporting time by **40-50 minutes per KAM**.
 * **Result:** Drove a **12% improvement** in overall portfolio performance through automated data synchronization.
-* **Tech Stack:** Data Automation, Dashboard Design, Commercial Metrics.
+* **Tech Stack:** Data Automation, Dashboard Design, Commercial Metrics, Workflow Optimization, Datasuite.
 
 ### 📈 Stock Price Forecasting (ARIMA Model)
-* Led a team to develop a predictive model for VCB stock prices using historical data.
+* Led a team to develop a predictive model for VCB stock prices using solely historical data.
 * Achieved **92% accuracy**.
 
 ---
