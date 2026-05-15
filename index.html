@@ -5,6 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nguyen Tien Phat — E-Commerce & Applied AI</title>
+  <meta name="description" content="Nguyen Tien Phat — E-Commerce Business Development professional at Shopee. Experienced in seller portfolio management, KAM strategy, campaign execution, dashboard automation, and applied AI. Based in Ho Chi Minh City, Vietnam." />
+  <meta name="keywords" content="E-Commerce, Business Development, Key Account Management, Shopee, KAM, Seller Portal, Dashboard, Power BI, Google Sheets, Applied AI, FMCG, Beauty, Vietnam, Ho Chi Minh City" />
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap"
     rel="stylesheet" />
@@ -423,6 +425,80 @@
     .fly-el.dragging {
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
     }
+
+    /* ── NEW: pulse on hero circle ── */
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.12; }
+      50% { transform: scale(1.15); opacity: 0.18; }
+    }
+    .hero::before { animation: pulse 6s ease-in-out infinite; }
+
+    /* ── NEW: scroll reveal ── */
+    html { scroll-behavior: smooth; }
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── NEW: nav classes ── */
+    .nav { background: var(--ink); padding: 0 40px; display: flex; align-items: center; justify-content: space-between; height: 56px; position: sticky; top: 0; z-index: 100; }
+    .nav-logo { font-family: 'DM Serif Display', serif; font-size: 18px; color: var(--white); text-decoration: none; }
+    .nav-logo em { color: var(--teal); font-style: italic; }
+    .nav-links { display: flex; gap: 4px; align-items: center; }
+    .nav-link { font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.55); text-decoration: none; padding: 6px 14px; border-radius: 8px; border: 0.5px solid transparent; transition: color 0.2s, background 0.2s; }
+    .nav-link:hover { color: var(--white); background: rgba(255,255,255,0.07); }
+    .nav-link.active { color: var(--white); border-color: rgba(255,255,255,0.15); }
+    .nav-cv-btn { font-size: 12px; font-weight: 500; color: var(--teal); border: 1px solid var(--teal); padding: 5px 14px; border-radius: 8px; text-decoration: none; margin-left: 8px; transition: background 0.2s, color 0.2s; }
+    .nav-cv-btn:hover { background: var(--teal); color: var(--white); }
+
+    /* ── NEW: hero keywords ── */
+    .hero-keywords { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+    .hero-keyword { font-size: 11px; font-weight: 500; letter-spacing: 0.04em; background: rgba(29,158,117,0.18); color: #5ddcaa; border: 0.5px solid rgba(29,158,117,0.35); border-radius: 6px; padding: 3px 10px; }
+
+    /* ── NEW: hero sub margin tweak for keywords ── */
+    .hero-sub { margin-bottom: 14px !important; }
+
+    /* ── NEW: skill pill hover ── */
+    .skill-pill { transition: background 0.2s, border-color 0.2s; }
+    .skill-pill:hover { background: var(--teal-light); border-color: #6ee7b7; }
+
+    /* ── NEW: exp-card lift on hover ── */
+    .exp-card { transition: box-shadow 0.2s, transform 0.2s !important; }
+    .exp-card:hover { transform: translateY(-2px); }
+
+    /* ── NEW: exp bullets (ATS) ── */
+    .exp-bullets { list-style: none; }
+    .exp-bullets li { font-size: 13.5px; color: var(--muted); padding: 7px 0 7px 18px; border-bottom: 0.5px solid var(--soft); position: relative; line-height: 1.6; }
+    .exp-bullets li:last-child { border-bottom: none; }
+    .exp-bullets li::before { content: '→'; position: absolute; left: 0; color: var(--teal); font-size: 12px; top: 8px; }
+    .exp-bullets li strong { color: var(--ink); font-weight: 500; }
+
+    /* ── NEW: why-me grid ── */
+    .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .why-card { background: var(--white); border: 0.5px solid var(--border); border-radius: 12px; padding: 20px; transition: box-shadow 0.2s, transform 0.2s; }
+    .why-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.07); transform: translateY(-2px); }
+    .why-icon { font-size: 22px; margin-bottom: 10px; }
+    .why-title { font-size: 14px; font-weight: 500; color: var(--ink); margin-bottom: 6px; }
+    .why-desc { font-size: 13px; color: var(--muted); line-height: 1.65; }
+
+    /* ── NEW: CTA section ── */
+    .cta-section { background: var(--ink); border-radius: 20px; padding: 48px 40px; text-align: center; position: relative; overflow: hidden; margin-top: 52px; }
+    .cta-section::before { content: ''; position: absolute; top: -60px; right: -60px; width: 280px; height: 280px; border-radius: 50%; background: var(--teal); opacity: 0.1; animation: pulse 5s ease-in-out infinite; }
+    .cta-section::after { content: ''; position: absolute; bottom: -80px; left: -40px; width: 220px; height: 220px; border-radius: 50%; background: var(--teal); opacity: 0.07; animation: pulse 7s 1s ease-in-out infinite; }
+    .cta-inner { position: relative; z-index: 1; }
+    .cta-label { font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 12px; }
+    .cta-title { font-family: 'DM Serif Display', serif; font-size: clamp(26px, 4vw, 38px); color: var(--white); line-height: 1.2; margin-bottom: 12px; }
+    .cta-title em { font-style: italic; color: var(--teal); }
+    .cta-sub { font-size: 14px; color: rgba(255,255,255,0.55); max-width: 440px; margin: 0 auto 28px; line-height: 1.7; }
+    .cta-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .cta-btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--teal); color: var(--white); font-size: 14px; font-weight: 500; border-radius: 10px; padding: 13px 26px; text-decoration: none; transition: background 0.2s, transform 0.15s; }
+    .cta-btn-primary:hover { background: var(--teal-dark); transform: translateY(-2px); }
+    .cta-btn-ghost { display: inline-flex; align-items: center; gap: 8px; border: 0.5px solid rgba(255,255,255,0.2); color: var(--white); font-size: 14px; font-weight: 500; border-radius: 10px; padding: 13px 26px; text-decoration: none; transition: background 0.2s, border-color 0.2s; }
+    .cta-btn-ghost:hover { background: rgba(255,255,255,0.07); border-color: rgba(255,255,255,0.4); }
+
+    @media (max-width: 600px) {
+      .why-grid { grid-template-columns: 1fr; }
+      .cta-section { padding: 36px 24px; }
+      .nav { padding: 0 20px; }
+    }
   </style>
 </head>
 
@@ -435,16 +511,12 @@
   <div class="ag-hint" id="agHint">Drag elements · click Reset to restore</div>
 
   <!-- NAV -->
-  <nav
-    style="background:#111;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:56px;position:sticky;top:0;z-index:100;">
-    <a href="index.html"
-      style="font-family:'DM Serif Display',serif;font-size:18px;color:#fff;text-decoration:none;">Nguyen <em
-        style="color:#1D9E75;font-style:italic;">Tien Phat</em></a>
-    <div style="display:flex;gap:4px;">
-      <a href="index.html"
-        style="font-size:13px;font-weight:500;color:#fff;text-decoration:none;padding:6px 14px;border-radius:8px;border:0.5px solid rgba(255,255,255,0.15);">About</a>
-      <a href="projects.html"
-        style="font-size:13px;font-weight:500;color:rgba(255,255,255,0.55);text-decoration:none;padding:6px 14px;border-radius:8px;transition:color 0.2s;">Projects</a>
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">Nguyen <em>Tien Phat</em></a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link active">About</a>
+      <a href="projects.html" class="nav-link">Projects</a>
+      <a href="assest/CV_NguyenTienPhat.pdf" download class="nav-cv-btn">↓ Resume</a>
     </div>
   </nav>
 
@@ -453,7 +525,15 @@
     <div class="hero-inner">
       <div class="hero-tag">Open to Opportunities</div>
       <h1>Nguyen<br /><em>Tien Phat</em></h1>
-      <p class="hero-sub">E-Commerce Professional · Data-driven · Applied AI builder</p>
+      <p class="hero-sub">Business Development & E-Commerce · Shopee Beauty · Seller Strategy · Applied AI</p>
+      <div class="hero-keywords">
+        <span class="hero-keyword">Key Account Management</span>
+        <span class="hero-keyword">Portfolio Growth</span>
+        <span class="hero-keyword">Campaign Execution</span>
+        <span class="hero-keyword">Dashboard Automation</span>
+        <span class="hero-keyword">Applied AI</span>
+        <span class="hero-keyword">FMCG · Beauty</span>
+      </div>
       <div class="hero-contacts">
         <a class="contact-pill" href="tel:+84702047078">
           <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
@@ -476,6 +556,10 @@
           </svg>
           linkedin.com/in/phatnguyen1201
         </a>
+        <a class="contact-pill" href="assest/CV_NguyenTienPhat.pdf" download>
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download Resume
+        </a>
       </div>
     </div>
   </div>
@@ -492,6 +576,33 @@
       </p>
     </section>
 
+    <!-- WHY ME — NEW SECTION -->
+    <section class="fade-up">
+      <div class="section-label">Why Me</div>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon">🤝</div>
+          <div class="why-title">Commercial Operator, Not Just Analyst</div>
+          <div class="why-desc">Hands-on marketplace experience managing 40+ C2C seller portfolios at Shopee — driving GMV, campaign participation, and program enrollment through direct relationship management.</div>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">📊</div>
+          <div class="why-title">Analytical Mindset with Real Deliverables</div>
+          <div class="why-desc">Built production dashboards in Power BI and Google Sheets used daily by KAM teams. Applied forecasting (ARIMA, 92% accuracy) and data pipelines that replace manual reporting.</div>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🔄</div>
+          <div class="why-title">Both Sides of the Marketplace</div>
+          <div class="why-desc">Experience from the brand side (Ru9 — Lazada & TikTok Shop P&L) and the platform side (Shopee — KAM & offsite program execution). I understand what both sellers and platforms need.</div>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🤖</div>
+          <div class="why-title">AI as a Business Multiplier</div>
+          <div class="why-desc">Designed and deployed Beauty Bot — a multi-agent AI system that delivers daily market intelligence to Shopee team leads. Tech is the tool; commercial impact is the goal.</div>
+        </div>
+      </div>
+    </section>
+
     <section>
       <div class="section-label">Experience</div>
       <div class="exp-card fade-up">
@@ -500,22 +611,20 @@
           <span class="exp-date">Apr 2025 – Present</span>
         </div>
         <div class="exp-role">Key Account Management Associate</div>
-        <span class="exp-tag">FMCG · Beauty · C2C Sellers</span>
+        <span class="exp-tag">FMCG · Beauty · C2C Sellers · Offsite Program (AMS, CPAS)</span>
         <div class="metrics">
           <div class="metric"><span class="metric-num">30%</span><span class="metric-label">MoM Growth</span></div>
           <div class="metric"><span class="metric-num">8–10%</span><span class="metric-label">AMS Spend ↑ MoM</span>
           </div>
           <div class="metric"><span class="metric-num">40–50m</span><span class="metric-label">Reporting
-              Saved/day</span></div>
+              Saved/KAM/day</span></div>
         </div>
-        <ul class="exp-items">
-          <li>Drove 30% MoM growth in key commercial metrics across 40 C2C sellers via data-driven campaign strategies
-          </li>
-          <li>Increased AMS spend 8–10% MoM through Barter initiatives incentivizing higher commission rates</li>
-          <li>Built Seller Portal dashboards reducing daily reporting time by 40–50 min per KAM and boosting portfolio
-            performance by 12%</li>
-          <li>Developed Beauty Bot — an agentic AI agent summarizing daily E-Commerce & FMCG trends, piloted at team
-            lead level</li>
+        <ul class="exp-bullets">
+          <li>Managed a portfolio of <strong>40+ C2C beauty sellers</strong>, driving 30% MoM growth in key commercial metrics by consulting and pitching data-driven strategies across Campaigns, FBS, Tier 1 KOL Lives, and Promotions</li>
+          <li>Increased <strong>AMS spend by 8–10% MoM</strong> by designing and launching Barter initiatives that incentivized sellers to raise commission rates — directly improving offsite program contribution</li>
+          <li>Built <strong>Seller Portal</strong> for Beauty KAM workflows — a centralized Google Sheet auto-synced from Datasuite — reducing daily reporting time by <strong>40–50 minutes per KAM</strong> and contributing to a <strong>12% improvement in portfolio performance</strong></li>
+          <li>Designed and deployed <strong>Beauty Bot</strong> — a no-code multi-agent AI on Shopee's SMART platform — delivering daily E-Commerce & FMCG market intelligence to team leads, targeted at China and Korea beauty markets</li>
+          <li>Managed end-to-end partner lifecycles by analyzing performance trends and delivering <strong>data-driven seller consulting</strong> to support program enrollment and GMV growth</li>
         </ul>
       </div>
 
@@ -525,17 +634,17 @@
           <span class="exp-date">May 2024 – Dec 2024</span>
         </div>
         <div class="exp-role">E-Commerce Executive</div>
-        <span class="exp-tag">Lazada · TikTok Shop · Home Living</span>
+        <span class="exp-tag">Lazada · TikTok Shop · Shopee · Home Living & Beddings</span>
         <div class="metrics" style="grid-template-columns: repeat(2,1fr)">
           <div class="metric"><span class="metric-num">80%</span><span class="metric-label">GMV Growth YoY</span></div>
           <div class="metric"><span class="metric-num">Top 5</span><span class="metric-label">Shopee Beddings</span>
           </div>
         </div>
-        <ul class="exp-items">
-          <li>Drove 15% of total E-Commerce sales contribution via livestream on Shopee, TikTok Shop, and Lazada</li>
-          <li>Grew GMV 80% YoY on Lazada & TikTok Shop through campaign optimization and KAM collaboration</li>
-          <li>Built automated trackers and Power BI dashboards transforming manual reporting into real-time snapshots
-          </li>
+        <ul class="exp-bullets">
+          <li>Launched and scaled brand's <strong>first livestream operation</strong> across Shopee, TikTok Shop, and Lazada — contributing <strong>15% of total E-Commerce sales</strong> and achieving Top 5 in Shopee Beddings category</li>
+          <li>Grew <strong>GMV by 80% YoY</strong> on Lazada and TikTok Shop by optimizing campaign strategy, pricing mechanics, and collaborating with platform KAMs</li>
+          <li>Built <strong>automated performance trackers and Power BI dashboards</strong> across 3 platforms, replacing daily manual reporting with real-time snapshot visibility for the commercial team</li>
+          <li>Developed monthly visual content plans — banners, thumbnails, campaign assets — aligned to platform calendars to <strong>improve CTR and drive conversion</strong></li>
         </ul>
       </div>
     </section>
@@ -543,16 +652,19 @@
     <section class="fade-up">
       <div class="section-label">Skills</div>
       <div class="skills-grid">
-        <span class="skill-pill">Data Analysis</span>
-        <span class="skill-pill">Digital Marketing</span>
-        <span class="skill-pill">Dashboard Reporting</span>
+        <span class="skill-pill">Key Account Management</span>
+        <span class="skill-pill">Seller Portfolio Management</span>
         <span class="skill-pill">Commercial Planning</span>
+        <span class="skill-pill">Campaign Execution</span>
         <span class="skill-pill">Pricing Strategy</span>
+        <span class="skill-pill">Data Analysis</span>
+        <span class="skill-pill">Dashboard Reporting</span>
+        <span class="skill-pill">Power BI</span>
+        <span class="skill-pill">Google Sheets Automation</span>
         <span class="skill-pill">Excel · SQL · Python</span>
         <span class="skill-pill">Forecasting</span>
         <span class="skill-pill">Applied AI</span>
-        <span class="skill-pill">Power BI</span>
-        <span class="skill-pill">Google Sheets Automation</span>
+        <span class="skill-pill">Digital Marketing</span>
         <span class="skill-pill">Stakeholder Management</span>
         <span class="skill-pill">English — Business Level</span>
       </div>
@@ -572,10 +684,44 @@
       </div>
     </section>
 
-    <footer>Built with GitHub Pages · Nguyen Tien Phat © 2025</footer>
+    <!-- CTA SECTION — NEW -->
+    <div class="cta-section fade-up">
+      <div class="cta-inner">
+        <div class="cta-label">Let's Connect</div>
+        <h2 class="cta-title">Open to the right<br/><em>opportunity</em></h2>
+        <p class="cta-sub">Whether it's a BD role, an e-commerce platform team, or something at the intersection of commerce and AI — I'd love to hear about it.</p>
+        <div class="cta-buttons">
+          <a href="mailto:nguyentienphat1201@gmail.com" class="cta-btn-primary">
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+            Email Me
+          </a>
+          <a href="https://linkedin.com/in/phatnguyen1201" target="_blank" class="cta-btn-ghost">
+            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
+          </a>
+          <a href="assest/CV_NguyenTienPhat.pdf" download class="cta-btn-ghost">
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Resume
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <footer>Nguyen Tien Phat © 2025 · <a href="projects.html" style="color:var(--teal);text-decoration:none;">View Projects →</a></footer>
   </div>
 
   <script>
+    // ─── SCROLL REVEAL ────────────────────────────────────────────────
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          revealObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
     // ─── ANTIGRAVITY ENGINE ───────────────────────────────────────────────
     let agActive = false;
     let particles = [];
