@@ -3,10 +3,10 @@
 
 I bridge the gap between **relationship management** and **analytical execution**.
 Currently a Key Account Management Associate at **Shopee Vietnam**, managing a 
-portfolio of 30–40 high-value beauty partners while building tools that scale 
-commercial performance across the team.
+portfolio of 40 high-value beauty sellers while building tools that scale 
+commercial performance across the BD team.
 
-Actively transitioning into a **SaaS Account Manager** role in APAC —
+Actively transitioning into a **SaaS Account Manager** role in APAC -
 where I can bring consultative partner growth, portfolio management, and 
 data-driven business reviews to a product-led environment.
 
@@ -14,14 +14,14 @@ data-driven business reviews to a product-led environment.
 
 ## 💼 Professional Experience
 
-**Shopee** | KAM Associate | Apr 2025 – Present
-- Managing a portfolio of 30–40 high-value FMCG beauty seller accounts
+**Shopee** | KAM Associate | Apr 2025 – July 2026
+- Managing a portfolio of 40 high-value FMCG beauty seller accounts
 - Drove **30% MoM growth** through consultative business reviews and 
   data-led commercial recommendations
 - Built internal tools that improved portfolio performance by **12%** and 
   saved **40–50 min/day** of manual reporting per KAM
 
-**Ru9** | E-Commerce Executive | May – Dec 2024
+**Ru9** | E-Commerce Executive | May 2024 – Dec 2024
 - Scaled GMV by **80% YoY** on Lazada and TikTok Shop
 - Achieved **Top 5 ranking** in Shopee Beddings category
 
@@ -30,7 +30,7 @@ data-driven business reviews to a product-led environment.
 ## 🚀 Projects
 
 ### 📊 Seller Portal — Portfolio Intelligence Dashboard
-A centralized performance hub for managing 30+ seller accounts across 20+ data sources.
+A centralized performance hub for managing 40+ seller accounts across 20+ data sources.
 
 - **Problem:** Data scattered across 20+ tools made proactive account management 
   nearly impossible
