@@ -5,6 +5,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projects — Nguyen Tien Phat</title>
+  <meta name="description" content="Selected projects by Nguyen Tien Phat — ARIMA stock forecasting, a livestream performance dashboard, the Seller Portal KAM data hub, and Beauty Bot, an agentic AI market-intelligence tool." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiMxRDlFNzUiLz48dGV4dCB4PSIzMiIgeT0iNDMiIGZvbnQtZmFtaWx5PSJBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjMwIiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjZmZmZmZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5QPC90ZXh0Pjwvc3ZnPg==" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tienphat-nguyen-work.vercel.app/projects.html" />
+  <meta property="og:title" content="Projects — Nguyen Tien Phat" />
+  <meta property="og:description" content="ARIMA stock forecasting, a livestream performance dashboard, the Seller Portal KAM data hub, and Beauty Bot, an agentic AI market-intelligence tool." />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Projects — Nguyen Tien Phat" />
+  <meta name="twitter:description" content="Selected projects: ARIMA forecasting, livestream dashboards, Seller Portal, Beauty Bot." />
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap"
     rel="stylesheet" />
@@ -937,6 +946,38 @@
             </div>
           </div>
 
+          <!-- Dashboard images -->
+          <div class="proj-section-label" style="margin-bottom:10px;">Dashboard Showcase</div>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:18px;">
+            <!-- Image 1 -->
+            <div>
+              <div class="dash-img-wrap"
+                onclick="openLightbox('assest/seller_portal_1.png','Seller Portal · Unified KAM view — KPI metrics by seller')">
+                <img src="assest/seller_portal_1.png" alt="Seller Portal dashboard — unified KAM view" class="dash-img" />
+                <div class="dash-zoom-hint">🔍 Click to expand</div>
+              </div>
+              <p style="font-size:11px;color:var(--muted);margin-top:6px;text-align:center;line-height:1.5;">
+                <strong style="color:var(--ink);">Unified KAM view</strong><br />
+                Revenue, orders, ads, and FBS stock in one sheet<br />
+                <em style="font-size:10px;">⚠️ Numbers illustrative — data randomised for privacy</em>
+              </p>
+            </div>
+            <!-- Image 2 -->
+            <div>
+              <div class="dash-img-wrap"
+                onclick="openLightbox('assest/seller_portal_2.png','Seller Portal · Detail / drill-down view')">
+                <img src="assest/seller_portal_2.png" alt="Seller Portal dashboard — detail drill-down view" class="dash-img" />
+                <div class="dash-zoom-hint">🔍 Click to expand</div>
+              </div>
+              <p style="font-size:11px;color:var(--muted);margin-top:6px;text-align:center;line-height:1.5;">
+                <strong style="color:var(--ink);">Detail / drill-down view</strong><br />
+                Per-seller W/M comparison and AI-generated next steps<br />
+                <em style="font-size:10px;">⚠️ Numbers illustrative — data randomised for privacy</em>
+              </p>
+            </div>
+          </div>
+
           <!-- Value: BD vs Seller -->
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:18px;">
             <div style="background:var(--soft);border-radius:10px;padding:14px;">
@@ -1222,7 +1263,7 @@
     </section>
 
     <footer>
-      Nguyen Tien Phat © 2025 ·
+      Nguyen Tien Phat © 2026 ·
       <a href="index.html">← Back to About</a>
     </footer>
   </div>
@@ -1378,7 +1419,7 @@
       if (e.key === 'Escape') closeLightbox();
     });
     // Close only when clicking the backdrop (not the image)
-    document.getElementById('lb-backdrop').addEventListener('click', closeLightbox);
+    document.getElementById('lightbox').addEventListener('click', closeLightbox);
 
     // ── Drag & Zoom state ──
     let lbScale = 1, lbX = 0, lbY = 0;
